@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const jasmine = require('gulp-jasmine');
 const zip = require('gulp-zip');
+const Server = require('karma').Server;
 
 gulp.task('watch', ()=>
   browserSync.init({
@@ -10,12 +11,13 @@ gulp.task('watch', ()=>
     },
   })
 );
- 
-gulp.task('test', () =>
-  gulp.src('test/*.js')
-    // gulp-jasmine works on filepaths so you can't have any plugins before it
-    .pipe(jasmine())
-);
+
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
 
 gulp.task('zip', () =>
   gulp.src('app/**')

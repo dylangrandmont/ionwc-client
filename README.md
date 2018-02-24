@@ -29,6 +29,9 @@ npm install browser-sync --save-dev
 npm install --save-dev gulp-zip
 npm install --save-dev gulp-chmod
 npm install --save-dev gulp-jasmine
+npm install karma --save-dev
+npm install karma-phantomjs-launcher --save-dev
+npm install karma-jasmine --save-dev
 ```
 
 To run the web client, execute
@@ -40,7 +43,10 @@ gulp watch
 
 ## Running Unit Tests
 
-To run the full suite, execute the specRunner.html
+To run the full suite, execute
+```
+gulp test
+```
 
 ## Looking to Contribute?
 Below is a list of potential improvements
