@@ -14,14 +14,12 @@ var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', '
   infowindow = new google.maps.InfoWindow();
   infowindow.setZIndex(100);
 
-  $rootScope.dateService = new DateService();
-
   $rootScope.drillingLayer = new google.maps.FusionTablesLayer({
     suppressInfoWindows: true,
     query: {
       select: 'address',
       from: tableIDs.drilling,
-      where:  "'DrillDate' >= '" + $rootScope.dateService.getDefaultWellStartDate() + "'"
+      where:  "'DrillDate' >= '" + DateService.getDefaultWellStartDate() + "'"
     },
     styles: markerColors
   });
@@ -31,7 +29,7 @@ var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', '
     query: {
       select: 'address',
       from: tableIDs.licensing,
-      where: "'Date' >= '" + $rootScope.dateService.getDefaultWellStartDate() + "'"
+      where: "'Date' >= '" + DateService.getDefaultWellStartDate() + "'"
     },
     styles: markerColors
   });
@@ -41,7 +39,7 @@ var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', '
     query: {
       select: '\'Geocodable address\'',
       from: tableIDs.upComingLandSale,
-      where: "'saleDate' >= '" + $rootScope.dateService.getReformatedDate(new Date()) + "'"
+      where: "'saleDate' >= '" + DateService.getReformatedDate(new Date()) + "'"
     },
     options: {
       styleId: 2,

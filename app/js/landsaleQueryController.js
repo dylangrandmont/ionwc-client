@@ -141,7 +141,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
   });
 
     var querySales = "SELECT 'saleDate' AS 'Select Sale Date', count(contractNo) AS 'Contracts', SUM(hectares) AS 'Hectares' FROM " +
-    "1HUapBmqcSP_Dkz1OA_L1LAv7flecCkVeK8gQrJnV" + " WHERE 'saleDate' >= '" + $rootScope.dateService.getReformatedDate(new Date()) + 
+    "1HUapBmqcSP_Dkz1OA_L1LAv7flecCkVeK8gQrJnV" + " WHERE 'saleDate' >= '" + DateService.getReformatedDate(new Date()) + 
     "' GROUP BY 'saleDate' ORDER BY 'saleDate' ASC";
 
     var queryTextSales = encodeURIComponent(querySales);
@@ -382,8 +382,8 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
       }
     }
 
-    upComingQuery = queryString + "'saleDate' >= '" + $rootScope.dateService.getReformatedDate($scope.fromDate) + "' AND 'saleDate' <= '" + $rootScope.dateService.getReformatedDate($scope.toDate) + "'";
-    previousQuery = queryString + "'saleDate' >= '" + $rootScope.dateService.getReformatedDate($scope.previousFromDate) + "' AND 'saleDate' <= '" + $rootScope.dateService.getReformatedDate($scope.previousToDate) + "'";
+    upComingQuery = queryString + "'saleDate' >= '" + DateService.getReformatedDate($scope.fromDate) + "' AND 'saleDate' <= '" + DateService.getReformatedDate($scope.toDate) + "'";
+    previousQuery = queryString + "'saleDate' >= '" + DateService.getReformatedDate($scope.previousFromDate) + "' AND 'saleDate' <= '" + DateService.getReformatedDate($scope.previousToDate) + "'";
     queryStrings = {
       'upComingQuery': upComingQuery,
       'previousQuery': previousQuery
