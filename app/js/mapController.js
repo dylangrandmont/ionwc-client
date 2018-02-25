@@ -1,5 +1,14 @@
 app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', function($scope, $rootScope, $sce, $location) {
 
+  $scope.disclaimer = $sce.trustAsHtml(disclaimer);
+  $scope.copyrightRange = COPYRIGHT_RANGE;
+  $scope.dashboardOpen = false;
+
+  $rootScope.showPrevious = false;
+  $rootScope.showUpcoming = true;
+
+  $scope.showLegend = false;
+
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
   infowindow = new google.maps.InfoWindow();
@@ -106,15 +115,6 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
   google.maps.event.addListener(map, "click", function(event) {
     infowindow.close();
   });
-
-  $scope.disclaimer = $sce.trustAsHtml(disclaimer);
-  $scope.copyrightRange = COPYRIGHT_RANGE;
-  $scope.dashboardOpen = false;
-
-  $rootScope.showPrevious = false;
-  $rootScope.showUpcoming = true;
-
-  $scope.showLegend = false;
 
   $('#data-panel').scroll(function(){
     var elementPosition = $('#province-header').offset();
