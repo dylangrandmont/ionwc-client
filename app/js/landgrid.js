@@ -228,15 +228,15 @@ function onZoomChanged() {
       nts50kLayer.setMap(null);
       townshipLayer.setMap(map);
       nts250kLayer.setMap(map);
-      updateLayerOrders();
+      redrawLayers();
       if (zoom >= 7) {
         ntsBlockLayer.setMap(null);
         nts50kLayer.setMap(map);
-        updateLayerOrders();
+        redrawLayers();
         clearNTS50kLabels();
         if (zoom >= 8) {
           ntsBlockLayer.setMap(map);
-          updateLayerOrders();
+          redrawLayers();
           clearNTS50kLabels();
           clearTownshipLabels();
           if (zoom >= 10) {
@@ -270,30 +270,11 @@ function onZoomChanged() {
   }
 }
 
-function updateLayerOrders() {
-  if (LayerManager.licencingLayer.getMap() != null) {
-    LayerManager.licencingLayer.setMap(LayerManager.licencingLayer.getMap());
-  }
-
-  if (LayerManager.drillingLayer.getMap() != null) {
-    LayerManager.drillingLayer.setMap(LayerManager.drillingLayer.getMap());
-  }
-
-  if (LayerManager.upComingLandSaleLayer.getMap() != null) {
-    LayerManager.upComingLandSaleLayer.setMap(LayerManager.upComingLandSaleLayer.getMap());
-  }
-
-  if (LayerManager.previousLandSaleLayer.getMap() != null) {
-    LayerManager.previousLandSaleLayer.setMap(LayerManager.previousLandSaleLayer.getMap());
-  }
-
-  if (typeof adLayers !== 'undefined') {
-    for (var i = 0; i < adLayers.length; i++) {
-      if (previousLayer.getMap() != null) {
-        adLayers[i].setMap(adLayers[i].getMap());
-      }
-    }
-  }
+function redrawLayers() {
+  LayerManager.licencingLayer.setMap(LayerManager.licencingLayer.getMap());
+  LayerManager.drillingLayer.setMap(LayerManager.drillingLayer.getMap());
+  LayerManager.upComingLandSaleLayer.setMap(LayerManager.upComingLandSaleLayer.getMap());
+  LayerManager.previousLandSaleLayer.setMap(LayerManager.previousLandSaleLayer.getMap());
 }
 
 function clearSectionLayers() {
@@ -468,7 +449,7 @@ function enableClosestSectionMap(tableID) {
       break;
     }
 
-    updateLayerOrders();
+    redrawLayers();
   }
 }
 
