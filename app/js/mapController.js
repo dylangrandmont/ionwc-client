@@ -116,12 +116,6 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
 
   $scope.showLegend = false;
 
-  window.onclick = function(event) {
-    if (event.target == infoModal) {
-      infoModal.style.display = "none";
-    }
-  };
-
   $('#data-panel').scroll(function(){
     var elementPosition = $('#province-header').offset();
     if ($('#charts').offset().top > 105) {
