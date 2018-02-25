@@ -43,7 +43,7 @@ var w5w6LabelTableID = '18qUVQeJlqOZLiO6N8E44o4r_VXfqyk4HkehljNuY',
     w112NTSLabelTableID = '1b9xfUP-btu5EvYaUjSFgOBjGxyBfNi1setmjSUmU',
     w122NTSLabelTableID = '14AHEqJvI--MRdLLTfAwh319gTTfq2fKNgTUYK-vI';
 
-var meridianLngs = [-97.45, -102.0, -106.0, -110.0, -114.0, -118.0];
+const meridianLngs = [-97.45, -102.0, -106.0, -110.0, -114.0, -118.0];
 
 function initializeLandGrid() {
   landGridInitialized = true;

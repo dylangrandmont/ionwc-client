@@ -116,15 +116,9 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
 
   $scope.showLegend = false;
 
-  document.getElementById("closeAd").onclick = function() {
-    document.getElementById("adModal").style.display = "none";
-  }
-
   window.onclick = function(event) {
     if (event.target == infoModal) {
       infoModal.style.display = "none";
-    } else if (event.target == document.getElementById("adModal")) {
-      document.getElementById("adModal").style.display = "none";
     }
   };
 
