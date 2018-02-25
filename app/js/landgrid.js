@@ -682,16 +682,12 @@ function updateNTSUnitLabelsText(response) {
   if (responseTable !== null) {
     numRows = responseTable.getNumberOfRows();
 
-    for(i = 0; i < numRows; i++) {
-      var latlng = response.getDataTable().getValue(i, 0).toString().replace('<Point><coordinates>', '').replace('</coordinates></Point>', '')
-      var lng = latlng.split(',')[0];
-      var lat = latlng.split(',')[1];
-      var sectionString = response.getDataTable().getValue(i, 1).toString();
-      var point = new google.maps.LatLng(
-        parseFloat(lat),
-        parseFloat(lng));
+    for (i = 0; i < numRows; i++) {
+      const coordinates = getCoordinatesFromRow(response, i);
+      var point = new google.maps.LatLng(parseFloat(coordinates.lat), parseFloat(coordinates.lng));
+
       ntsUnitLabels.push(new InfoBox({
-        content: sectionString
+        content: coordinates.sectionString
         ,boxStyle: {
           border: "0px solid black"
           ,textAlign: "center"
@@ -707,6 +703,20 @@ function updateNTSUnitLabelsText(response) {
       }));
       ntsUnitLabels[ntsUnitLabels.length-1].open(map);
     }
+  }
+}
+
+function getCoordinatesFromRow(response, rowIndex) {
+  const latlng = response.getDataTable().getValue(rowIndex, 0).toString().replace('<Point><coordinates>', '').replace('</coordinates></Point>', '')
+  const lng = latlng.split(',')[0];
+  const lat = latlng.split(',')[1];
+
+  const sectionString = response.getDataTable().getValue(rowIndex, 1).toString();
+
+  return {
+    'lng': lng,
+    'lat': lat,
+    'sectionString': sectionString
   }
 }
 

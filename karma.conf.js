@@ -17,6 +17,7 @@ module.exports = function(config) {
     files: [
       'app/deps/angular-1.6.1/angular.min.js',
       'app/js/dateService.js',
+      'app/js/landgrid.js',
       'test/*.js'
     ],
 
