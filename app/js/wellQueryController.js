@@ -249,7 +249,7 @@ app.controller('wellQueryController', ['$scope', '$rootScope', '$location', func
   };
 
   $scope.onWellQueryChange = function(updateLocalStorage) {
-    $rootScope.drillingLayer.setOptions({
+    LayerManager.drillingLayer.setOptions({
       query: {
         select: 'address',
         from: tableIDs.drilling,
@@ -260,7 +260,7 @@ app.controller('wellQueryController', ['$scope', '$rootScope', '$location', func
       styles: markerColors 
     });
 
-    $rootScope.licencingLayer.setOptions({
+    LayerManager.licencingLayer.setOptions({
       query: {
         select: 'address',
         from: tableIDs.licensing,

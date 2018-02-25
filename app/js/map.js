@@ -14,48 +14,7 @@ var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', '
   infowindow = new google.maps.InfoWindow();
   infowindow.setZIndex(100);
 
-  $rootScope.drillingLayer = new google.maps.FusionTablesLayer({
-    suppressInfoWindows: true,
-    query: {
-      select: 'address',
-      from: tableIDs.drilling,
-      where:  "'DrillDate' >= '" + DateService.getDefaultWellStartDate() + "'"
-    },
-    styles: markerColors
-  });
-
-  $rootScope.licencingLayer = new google.maps.FusionTablesLayer({
-    suppressInfoWindows: true,
-    query: {
-      select: 'address',
-      from: tableIDs.licensing,
-      where: "'Date' >= '" + DateService.getDefaultWellStartDate() + "'"
-    },
-    styles: markerColors
-  });
-
-  $rootScope.upComingLandSaleLayer = new google.maps.FusionTablesLayer({
-    suppressInfoWindows: true,
-    query: {
-      select: '\'Geocodable address\'',
-      from: tableIDs.upComingLandSale,
-      where: "'saleDate' >= '" + DateService.getReformatedDate(new Date()) + "'"
-    },
-    options: {
-      styleId: 2,
-      templateId: 2
-    }
-  });
-
-  $rootScope.previousLandSaleLayer = new google.maps.FusionTablesLayer({
-    suppressInfoWindows: true,
-    query: {
-      select: '\'Geocodable address\'',
-      from: tableIDs.previousLandSale
-    },
-  });
-
-  google.maps.event.addListener($rootScope.drillingLayer, 'click', function(e) {
+  google.maps.event.addListener(LayerManager.drillingLayer, 'click', function(e) {
     if (infowindow) {
       infowindow.close();
     } else {
@@ -78,7 +37,7 @@ var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', '
     infowindow.open(map);
   });
 
-  google.maps.event.addListener($rootScope.licencingLayer, 'click', function(e) {
+  google.maps.event.addListener(LayerManager.licencingLayer, 'click', function(e) {
     if (infowindow) {
       infowindow.close();
     } else {
@@ -101,7 +60,7 @@ var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', '
     infowindow.open(map);
   });
 
-  google.maps.event.addListener($rootScope.upComingLandSaleLayer, 'click', function(e) 
+  google.maps.event.addListener(LayerManager.upComingLandSaleLayer, 'click', function(e) 
   {
     if (infowindow) {
       infowindow.close();
@@ -124,7 +83,7 @@ var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', '
     infowindow.open(map);   
   });
 
-  google.maps.event.addListener($rootScope.previousLandSaleLayer, 'click', function(e) 
+  google.maps.event.addListener(LayerManager.previousLandSaleLayer, 'click', function(e) 
   {
     if (infowindow) {
       infowindow.close();
@@ -223,10 +182,10 @@ var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', '
     $scope.dataRangeTable = $sce.trustAsHtml(drillingDateRangeTable);
     $scope.dataAttributions = $sce.trustAsHtml(wellAttributions);
 
-    $rootScope.licencingLayer.setMap(null);
-    $rootScope.upComingLandSaleLayer.setMap(null);
-    $rootScope.previousLandSaleLayer.setMap(null);
-    $rootScope.drillingLayer.setMap(map);
+    LayerManager.licencingLayer.setMap(null);
+    LayerManager.upComingLandSaleLayer.setMap(null);
+    LayerManager.previousLandSaleLayer.setMap(null);
+    LayerManager.drillingLayer.setMap(map);
   };
 
   $scope.onSelectLicencing = function() {
@@ -238,10 +197,10 @@ var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', '
     $scope.dataRangeTable = $sce.trustAsHtml(licensingDateRangeTable);
     $scope.dataAttributions = $sce.trustAsHtml(wellAttributions);
 
-    $rootScope.drillingLayer.setMap(null);
-    $rootScope.upComingLandSaleLayer.setMap(null);
-    $rootScope.previousLandSaleLayer.setMap(null);
-    $rootScope.licencingLayer.setMap(map);
+    LayerManager.drillingLayer.setMap(null);
+    LayerManager.upComingLandSaleLayer.setMap(null);
+    LayerManager.previousLandSaleLayer.setMap(null);
+    LayerManager.licencingLayer.setMap(map);
   };
 
   $scope.onSelectLandSales = function() {
@@ -253,19 +212,19 @@ var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', '
     $scope.dataRangeTable = $sce.trustAsHtml(landSaleDateRangeTable);
     $scope.dataAttributions = $sce.trustAsHtml(landSaleAttributions);
 
-    $rootScope.drillingLayer.setMap(null);
-    $rootScope.licencingLayer.setMap(null);
+    LayerManager.drillingLayer.setMap(null);
+    LayerManager.licencingLayer.setMap(null);
 
     if ($rootScope.showUpcoming) {
-      $rootScope.upComingLandSaleLayer.setMap(map);
+      LayerManager.upComingLandSaleLayer.setMap(map);
     } else {
-      $rootScope.upComingLandSaleLayer.setMap(null);
+      LayerManager.upComingLandSaleLayer.setMap(null);
     }
 
     if ($rootScope.showPrevious) {
-      $rootScope.previousLandSaleLayer.setMap(map);
+      LayerManager.previousLandSaleLayer.setMap(map);
     } else {
-      $rootScope.previousLandSaleLayer.setMap(null);
+      LayerManager.previousLandSaleLayer.setMap(null);
     }
   };
 

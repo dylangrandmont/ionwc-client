@@ -67,15 +67,15 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
 
   if ($rootScope.viewType == 'Land Sales') { 
     if ($rootScope.showUpcoming) {
-      $rootScope.upComingLandSaleLayer.setMap(map);
+      LayerManager.upComingLandSaleLayer.setMap(map);
     } else {
-      $rootScope.upComingLandSaleLayer.setMap(null);
+      LayerManager.upComingLandSaleLayer.setMap(null);
     }
 
     if ($rootScope.showPrevious) {
-      $rootScope.previousLandSaleLayer.setMap(map);
+      LayerManager.previousLandSaleLayer.setMap(map);
     } else {
-      $rootScope.previousLandSaleLayer.setMap(null);
+      LayerManager.previousLandSaleLayer.setMap(null);
     }
   }
 
@@ -307,18 +307,18 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
   $scope.toggleShowPrevious = function() {
     $rootScope.showPrevious = !$rootScope.showPrevious;
     if ($rootScope.showPrevious) {
-      $rootScope.previousLandSaleLayer.setMap(map);
+      LayerManager.previousLandSaleLayer.setMap(map);
     } else {
-      $rootScope.previousLandSaleLayer.setMap(null);
+      LayerManager.previousLandSaleLayer.setMap(null);
     }
   };
 
   $scope.toggleShowUpcoming = function () {
     $rootScope.showUpcoming = !$rootScope.showUpcoming;
     if ($rootScope.showUpcoming) {
-      $rootScope.upComingLandSaleLayer.setMap(map);
+      LayerManager.upComingLandSaleLayer.setMap(map);
     } else {
-      $rootScope.upComingLandSaleLayer.setMap(null);
+      LayerManager.upComingLandSaleLayer.setMap(null);
     }
   };
 
@@ -341,14 +341,14 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
   $scope.onLandSaleQueryChange = function() {
 
     var queryStrings = getQueryStrings();
-    $rootScope.upComingLandSaleLayer.setOptions({
+    LayerManager.upComingLandSaleLayer.setOptions({
       query: {
         select: 'address',
         from: tableIDs.upComingLandSale,
         where: queryStrings.upComingQuery
       }
     });
-    $rootScope.previousLandSaleLayer.setOptions({
+    LayerManager.previousLandSaleLayer.setOptions({
       query: {
         select: 'address',
         from: tableIDs.previousLandSale,

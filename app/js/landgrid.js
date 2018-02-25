@@ -271,20 +271,20 @@ function onZoomChanged() {
 }
 
 function updateLayerOrders() {
-  if (licencingLayer.getMap() != null) {
-    licencingLayer.setMap(licencingLayer.getMap());
+  if (LayerManager.licencingLayer.getMap() != null) {
+    LayerManager.licencingLayer.setMap(LayerManager.licencingLayer.getMap());
   }
 
-  if (drillingLayer.getMap() != null) {
-    drillingLayer.setMap(drillingLayer.getMap());
+  if (LayerManager.drillingLayer.getMap() != null) {
+    LayerManager.drillingLayer.setMap(LayerManager.drillingLayer.getMap());
   }
 
-  if (upComingLandSaleLayer.getMap() != null) {
-    upComingLandSaleLayer.setMap(upComingLandSaleLayer.getMap());
+  if (LayerManager.upComingLandSaleLayer.getMap() != null) {
+    LayerManager.upComingLandSaleLayer.setMap(LayerManager.upComingLandSaleLayer.getMap());
   }
 
-  if (previousLandSaleLayer.getMap() != null) {
-    previousLandSaleLayer.setMap(previousLandSaleLayer.getMap());
+  if (LayerManager.previousLandSaleLayer.getMap() != null) {
+    LayerManager.previousLandSaleLayer.setMap(LayerManager.previousLandSaleLayer.getMap());
   }
 
   if (typeof adLayers !== 'undefined') {
