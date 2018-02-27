@@ -48,15 +48,6 @@ To run the full suite, execute
 gulp test
 ```
 
-## Looking to Contribute?
-Below is a list of potential improvements
-
-### Add Facilities Map
-* Need to introduce a facilities view
-
-### Unit Test Coverage
-* Increase coverage of Javascript unit test coverage
-
 
 # Copyright Notice
 This README and the entire contents of this directory are copyright of Dylan Grandmont, 2016-2018.
