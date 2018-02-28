@@ -39,7 +39,7 @@ var w5w6LabelTableID = '18qUVQeJlqOZLiO6N8E44o4r_VXfqyk4HkehljNuY',
     w2w3LabelTableID = '1d9zBaS1rZXFwSgdE05JIiq1i5XdzXi41FeSsubyR',
     w1w2LabelTableID = '1fKicnwFNeWAj-UgCcQt6BeO0HCdKCc26TN62gJ_Z',
     e1w1LabelTableID = '1PUPVXGCDpU3OpVOYRUQMpsZRhkF3oN6KbclRtuS8',
-    ntsBlockLabelTableID = '1waGyZUHxHxFXd_BBaF5IzBm3hyLxk84trf_bpX4E';
+    ntsBlockLabelTableID = '1waGyZUHxHxFXd_BBaF5IzBm3hyLxk84trf_bpX4E',
     w112NTSLabelTableID = '1b9xfUP-btu5EvYaUjSFgOBjGxyBfNi1setmjSUmU',
     w122NTSLabelTableID = '14AHEqJvI--MRdLLTfAwh319gTTfq2fKNgTUYK-vI';
 

@@ -4,7 +4,7 @@ var LayerManager = {
       query: {
         select: 'address',
         from: tableIDs.drilling,
-        where:  "'DrillDate' >= '" + DateService.getDefaultWellStartDate() + "'"
+        where:  "'DrillDate' >= '" + dateService.getDefaultWellStartDate() + "'"
       },
       styles: markerColors
     }),
@@ -14,7 +14,7 @@ var LayerManager = {
       query: {
         select: 'address',
         from: tableIDs.licensing,
-        where: "'Date' >= '" + DateService.getDefaultWellStartDate() + "'"
+        where: "'Date' >= '" + dateService.getDefaultWellStartDate() + "'"
       },
       styles: markerColors
     }),
@@ -24,7 +24,7 @@ var LayerManager = {
       query: {
         select: '\'Geocodable address\'',
         from: tableIDs.upComingLandSale,
-        where: "'saleDate' >= '" + DateService.getReformatedDate(new Date()) + "'"
+        where: "'saleDate' >= '" + dateService.getReformatedDate(new Date()) + "'"
       },
       options: {
         styleId: 2,

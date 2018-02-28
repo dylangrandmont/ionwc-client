@@ -82,7 +82,9 @@ function change(data) {
     .data().map(function(d) {
       return d.data;
     });
-  if (data0.length === 0) data0 = data;
+  if (data0.length === 0) {
+    data0 = data;
+  }
   var was = mergeWithFirstEqualZero(data, data0);
   var is = mergeWithFirstEqualZero(data0, data);
 
