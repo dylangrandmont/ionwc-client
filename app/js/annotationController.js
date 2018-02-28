@@ -143,4 +143,10 @@ app.controller('annotationController', ['$scope', function($scope) {
       }
     }
   }, true);
+
+  $scope.toggleLandGridLayer = function() {
+    const toggleOn = document.getElementById('layer_00').checked;
+
+    landGridService.toggleLandGrid(toggleOn);
+  }
 }]);
