@@ -65,7 +65,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
   };
   handleURLParameters();
 
-  if ($rootScope.viewType == 'Land Sales') { 
+  if ($rootScope.viewType === 'Land Sales') { 
     if ($rootScope.showUpcoming) {
       LayerManager.upComingLandSaleLayer.setMap(map);
     } else {
@@ -201,7 +201,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     var provinceFilterString,
         saleDateString = '';
 
-    if ($scope.filterProvince == 'map') {
+    if ($scope.filterProvince === 'map') {
       provinceFilterString = "'centerLatitude' <= '" + $rootScope.neLat + "' AND 'centerLatitude' >= '" + $rootScope.swLat
       + "' AND 'centerLongitude' <= '" + $rootScope.neLng + "' AND 'centerLongitude' >= '" + $rootScope.swLng + "'";
     } else {
@@ -236,7 +236,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     gvizQuery = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
     gvizQuery.send(function(response) {
       var data = response.getDataTable();
-      var formatter = new google.visualization.NumberFormat({ prefix: '$'});
+      var formatter = new google.visualization.NumberFormat({prefix: '$'});
       formatter.format(data, 1);
       var view = new google.visualization.DataView(data);
       var clientList = new google.visualization.ColumnChart(document.getElementById('stats-client-bonus-chart'));
@@ -346,11 +346,11 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     var queryString = "";
 
     if ($scope.showZoneFilter) {
-      if ($scope.age == '0') {
+      if ($scope.age === '0') {
         queryString += "'topAge' <= " + $scope.age + " AND 'baseAge' >= " + $scope.age + " AND ";
-      } else if ($scope.age == '-1') {
+      } else if ($scope.age === '-1') {
         queryString += "'topAge'='0' AND 'baseAge'='9999' AND ";
-      } else if ($scope.age != ''){
+      } else if ($scope.age !== ''){
         queryString += "'topAge' < " + $scope.age + " AND 'baseAge' >= " + $scope.age + " AND ";
       }
     }

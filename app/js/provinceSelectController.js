@@ -12,19 +12,19 @@ app.controller('provinceSelectController', ['$scope', '$rootScope', function($sc
     document.getElementById("label-sk").style.color = "black"; 
     document.getElementById("label-mb").style.color = "black"; 
 
-    if (province == 'BC') {
+    if (province === 'BC') {
       document.getElementById("label-bc").style.backgroundColor = "#f4511e";
       document.getElementById("label-bc").style.color = 'white';
-    } else if (province == 'AB') {
+    } else if (province === 'AB') {
       document.getElementById("label-ab").style.backgroundColor = "#f4511e";
       document.getElementById("label-ab").style.color = 'white';
-    } else if (province == 'SK') {
+    } else if (province === 'SK') {
       document.getElementById("label-sk").style.backgroundColor = "#f4511e";
       document.getElementById("label-sk").style.color = 'white';
-    } else if (province == 'MB') {
+    } else if (province === 'MB') {
       document.getElementById("label-mb").style.backgroundColor = "#f4511e";
       document.getElementById("label-mb").style.color = 'white';
-    } else if (province == 'map') {
+    } else if (province === 'map') {
       document.getElementById("label-map").style.backgroundColor = "#f4511e";
       document.getElementById("label-map").style.color = 'white';
     }

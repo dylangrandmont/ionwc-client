@@ -36,7 +36,7 @@ var dashboardApp = angular.module('dashboardApp', [])
 
     if (type === 'operator') {
       localStorage.licensee = dataTable.getValue(selectedItem.row, 0);
-    } else if (type == 'zone') {
+    } else if (type === 'zone') {
       localStorage.zone = dataTable.getValue(selectedItem.row, 0);
     } else if (type === 'fluid') {
       localStorage.fluid = dataTable.getValue(selectedItem.row, 0);
@@ -212,15 +212,15 @@ var dashboardApp = angular.module('dashboardApp', [])
 
         var slicesColor = {};
 
-        for (var i = 0; i < topFluidsData.getNumberOfRows(); i++){
-          if (topFluidsData.getValue(i, 0) == 'Crude Bitumen'){ 
-            slicesColor[i] = {color: 'rgb(194, 134, 73)' };
-          } else if (topFluidsData.getValue(i, 0) =='Crude Oil') {
-            slicesColor[i] = {color: 'rgb(111, 255, 111)' };
-          } else if (topFluidsData.getValue(i, 0) == 'Gas') {
-            slicesColor[i] = {color: 'rgb(255, 66, 66)' };
-          } else if (topFluidsData.getValue(i, 0) == 'Water'){
-            slicesColor[i] = {color: 'rgb(106, 106, 255)' };
+        for (var i = 0; i < topFluidsData.getNumberOfRows(); i++) {
+          if (topFluidsData.getValue(i, 0) === 'Crude Bitumen'){  
+            slicesColor[i] = {color: 'rgb(194, 134, 73)'};
+          } else if (topFluidsData.getValue(i, 0) === 'Crude Oil') {
+            slicesColor[i] = {color: 'rgb(111, 255, 111)'};
+          } else if (topFluidsData.getValue(i, 0) === 'Gas') {
+            slicesColor[i] = {color: 'rgb(255, 66, 66)'};
+          } else if (topFluidsData.getValue(i, 0) === 'Water') {
+            slicesColor[i] = {color: 'rgb(106, 106, 255)'};
           }
         }
 

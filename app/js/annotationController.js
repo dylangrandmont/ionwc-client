@@ -132,7 +132,7 @@ app.controller('annotationController', ['$scope', function($scope) {
         $scope.geologicalEdges[i].setMap(null);
       }
     }
-  }, true );
+  }, true);
 
   $scope.$watch("licensingTrendsCheckboxes", function(n){
     for (var i in n) {
@@ -142,5 +142,5 @@ app.controller('annotationController', ['$scope', function($scope) {
         $scope.licensingTrends[i].setMap(null);
       }
     }
-  }, true );
+  }, true);
 }]);

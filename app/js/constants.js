@@ -93,10 +93,10 @@ var pieChartOptions = {
 };
 
 var markerColors = [
-  {where: "'SubstanceCode' = 4", markerOptions: { iconName: "small_yellow"}},
-  {where: "'SubstanceCode' = 2", markerOptions:{ iconName: "measle_brown"}},
-  {where: "'SubstanceCode' = 0", markerOptions:{ iconName: "small_green"}},
-  {where: "'SubstanceCode' = 3", markerOptions:{ iconName: "small_blue"}}
+  {where: "'SubstanceCode' = 4", markerOptions: {iconName: "small_yellow"}},
+  {where: "'SubstanceCode' = 2", markerOptions:{iconName: "measle_brown"}},
+  {where: "'SubstanceCode' = 0", markerOptions:{iconName: "small_green"}},
+  {where: "'SubstanceCode' = 3", markerOptions:{iconName: "small_blue"}}
 ];
 
 var tableIDs = {

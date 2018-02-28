@@ -94,7 +94,7 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
 
     var content = "<h4 style='font-size:15px; margin-bottom: 10px;'>" + e.row['status'].value  + ": " + e.row['contractType'].value + ' ' + e.row['contractNo'].value + "</h4>"
     + "<b>Sale Date: </b>" + e.row['saleDate'].value + "<br>";
-    if (e.row['status'].value == 'Accepted') {
+    if (e.row['status'].value === 'Accepted') {
       content += "<b>Sale Bonus: </b>" + e.row['bonus'].value + "<br>"
       + "<b>Price Per Hectare: </b>" + e.row['dollarPerHectare'].value + " / hectare" + "<br>"
       + "<b>Buyers: </b>" + e.row['ClientDescription'].value + "<br>";
@@ -208,11 +208,11 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
   };
 
   handleURLParameters = function() {
-    if ($location.search().view == 'drilling') {
+    if ($location.search().view === 'drilling') {
       $scope.onSelectDrilling();
-    } else if ($location.search().view == 'licences') {
+    } else if ($location.search().view === 'licences') {
       $scope.onSelectLicencing();
-    } else if ($location.search().view == 'landsales') {
+    } else if ($location.search().view === 'landsales') {
       $scope.onSelectLandSales();
     } else {
       $scope.onSelectDrilling();

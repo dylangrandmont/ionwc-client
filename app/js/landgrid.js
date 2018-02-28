@@ -483,11 +483,11 @@ function updateTownshipsText(response) {
         labelWidth = "75px",
         labelOffset = -37;
 
-    if (map.getZoom() == 10) {
+    if (map.getZoom() === 10) {
       labelSize = "9pt";
       labelWidth = "56px";
       labelOffset = -28;
-    } else if (map.getZoom() == 9) {
+    } else if (map.getZoom() === 9) {
       labelSize = "8pt";
       labelWidth = "50px";
       labelOffset = -25;

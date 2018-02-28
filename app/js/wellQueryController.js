@@ -205,19 +205,19 @@ app.controller('wellQueryController', ['$scope', '$rootScope', function($scope, 
       var slicesColor = {};
 
       for (var i=0; i < data.getNumberOfRows(); i++) {
-        if (data.getValue(i, 0) == 'Crude Bitumen') {
+        if (data.getValue(i, 0) === 'Crude Bitumen') {
           slicesColor[i] = {
             color: 'rgb(194, 134, 73)'
           };
-        } else if (data.getValue(i, 0) =='Crude Oil') {
+        } else if (data.getValue(i, 0) === 'Crude Oil') {
           slicesColor[i] = {
             color: 'rgb(111, 255, 111)'
           };
-        } else if (data.getValue(i, 0) == 'Gas') {
+        } else if (data.getValue(i, 0) === 'Gas') {
           slicesColor[i] = {
             color: 'rgb(255, 66, 66)'
           };
-        } else if (data.getValue(i, 0) == 'Water') {
+        } else if (data.getValue(i, 0) === 'Water') {
           slicesColor[i] = {
             color: 'rgb(106, 106, 255)'
           };

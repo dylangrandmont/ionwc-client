@@ -37,8 +37,8 @@ var color = d3.scale.category20();
 
 var viewingCosts = true;
 
-var costsData = [{label: "Hosting (CAD$152)", value: 152.0}, {label: "Domain (CAD$20)", value: 20.0 }];
-var contributionsData = [{label: "Contributions (CAD$5)", value: 5.0}, {label: "Remainder (CAD$172)", value: 172.0 }];
+var costsData = [{label: "Hosting (CAD$152)", value: 152.0}, {label: "Domain (CAD$20)", value: 20.0}];
+var contributionsData = [{label: "Contributions (CAD$5)", value: 5.0}, {label: "Remainder (CAD$172)", value: 172.0}];
 
 function switchData (){
   if (viewingCosts) {
@@ -82,7 +82,7 @@ function change(data) {
     .data().map(function(d) {
       return d.data;
     });
-  if (data0.length == 0) data0 = data;
+  if (data0.length === 0) data0 = data;
   var was = mergeWithFirstEqualZero(data, data0);
   var is = mergeWithFirstEqualZero(data0, data);
 
@@ -147,7 +147,7 @@ function change(data) {
 
   text.transition().duration(duration)
     .style("opacity", function(d) {
-      return d.data.value == 0 ? 0 : 1;
+      return d.data.value === 0 ? 0 : 1;
     })
     .attrTween("transform", function(d) {
       var interpolate = d3.interpolate(this._current, d);
@@ -192,7 +192,7 @@ function change(data) {
   
   polyline.transition().duration(duration)
     .style("opacity", function(d) {
-      return d.data.value == 0 ? 0 : .5;
+      return d.data.value === 0 ? 0 : .5;
     })
     .attrTween("points", function(d){
       this._current = this._current;
