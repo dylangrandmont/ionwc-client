@@ -29,7 +29,9 @@ var outerArc = d3.svg.arc()
 
 svg.attr("transform", "translate(" + width  + "," + height + ")");
 
-var key = function(d){ return d.data.label; };
+var key = function(d) {
+  return d.data.label;
+};
 
 var color = d3.scale.category20();
 
@@ -56,11 +58,18 @@ d3.select(".randomize")
   });
 
 function mergeWithFirstEqualZero(first, second){
-  var secondSet = d3.set(); second.forEach(function(d) { secondSet.add(d.label); });
+  var secondSet = d3.set(); second.forEach(function(d) {
+    secondSet.add(d.label);
+  });
 
   var onlyFirst = first
-    .filter(function(d){ return !secondSet.has(d.label) })
-    .map(function(d) { return {label: d.label, value: 0}; });
+    .filter(function(d) {
+      return !secondSet.has(d.label)
+    })
+    .map(function(d) {
+      return {label: d.label, value: 0};
+    });
+
   return d3.merge([ second, onlyFirst ])
     .sort(function(a,b) {
       return d3.ascending(a.label, b.label);
@@ -70,7 +79,9 @@ function mergeWithFirstEqualZero(first, second){
 function change(data) {
   var duration = 2000;
   var data0 = svg.select(".slices").selectAll("path.slice")
-    .data().map(function(d) { return d.data });
+    .data().map(function(d) {
+      return d.data
+    });
   if (data0.length == 0) data0 = data;
   var was = mergeWithFirstEqualZero(data, data0);
   var is = mergeWithFirstEqualZero(data0, data);
@@ -83,7 +94,9 @@ function change(data) {
   slice.enter()
     .insert("path")
     .attr("class", "slice")
-    .style("fill", function(d) { return color(d.data.label); })
+    .style("fill", function(d) {
+      return color(d.data.label);
+    })
     .each(function(d) {
       this._current = d;
     });

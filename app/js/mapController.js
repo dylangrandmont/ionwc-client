@@ -62,8 +62,7 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
     infowindow.open(map);
   });
 
-  google.maps.event.addListener(LayerManager.upComingLandSaleLayer, 'click', function(e) 
-  {
+  google.maps.event.addListener(LayerManager.upComingLandSaleLayer, 'click', function(e) {
     if (infowindow) {
       infowindow.close();
     } else {
@@ -85,8 +84,7 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
     infowindow.open(map);   
   });
 
-  google.maps.event.addListener(LayerManager.previousLandSaleLayer, 'click', function(e) 
-  {
+  google.maps.event.addListener(LayerManager.previousLandSaleLayer, 'click', function(e) {
     if (infowindow) {
       infowindow.close();
     } else {

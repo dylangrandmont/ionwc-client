@@ -147,8 +147,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     var queryTextSales = encodeURIComponent(querySales);
     var gvizQuerySales = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryTextSales);
 
-    gvizQuerySales.send(function(response) 
-    {
+    gvizQuerySales.send(function(response) {
       var salesList = new google.visualization.Table(document.getElementById('sales-dates-list'));
       var data = response.getDataTable();
 
@@ -179,8 +178,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     var queryPrevTextSales = encodeURIComponent(queryPrevSales);
     var gvizQueryPrevSales = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryPrevTextSales);
 
-    gvizQueryPrevSales.send(function(response) 
-    {
+    gvizQueryPrevSales.send(function(response) {
       var prevSalesList = new google.visualization.Table(document.getElementById('prev-sales-dates-list'));
       var data = response.getDataTable();
       var view = new google.visualization.DataView(data);
@@ -216,8 +214,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     var queryText = encodeURIComponent(queryString);
     var gvizQuery = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
 
-    gvizQuery.send(function(response) 
-    {
+    gvizQuery.send(function(response) {
       var data = response.getDataTable();
 
       var formatter = new google.visualization.NumberFormat(
@@ -241,8 +238,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     queryString = "SELECT 'ClientDescription' AS 'Buyer / WI', sum(bonus) AS 'Total Bonuses' FROM " + "1n_vrhZ_gRfyv_Zg-lNBdeRfmQq62CNUgG8crWdGn" + " WHERE " + provinceFilterString + " AND 'status'='Accepted' GROUP BY 'ClientDescription' ORDER BY sum(bonus) DESC LIMIT 15";
     queryText = encodeURIComponent(queryString);
     gvizQuery = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
-    gvizQuery.send(function(response) 
-    {
+    gvizQuery.send(function(response) {
       var data = response.getDataTable();
       var formatter = new google.visualization.NumberFormat(
         { prefix: '$'}
@@ -260,8 +256,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     queryString = "SELECT 'ClientDescription' AS 'Buyer / WI', sum(hectares) AS 'Purchased Hectares' FROM " + "1n_vrhZ_gRfyv_Zg-lNBdeRfmQq62CNUgG8crWdGn" + " WHERE " + provinceFilterString + " AND 'status'='Accepted' GROUP BY 'ClientDescription' ORDER BY sum(hectares) DESC LIMIT 15";
     queryText = encodeURIComponent(queryString);
     gvizQuery = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
-    gvizQuery.send(function(response) 
-    {
+    gvizQuery.send(function(response) {
       var data = response.getDataTable();
       var formatter = new google.visualization.NumberFormat(
         { suffix: ' ha'}
@@ -280,8 +275,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     queryString = "SELECT 'contractType', count(contractType) FROM " + "1n_vrhZ_gRfyv_Zg-lNBdeRfmQq62CNUgG8crWdGn" + " WHERE " + provinceFilterString + " GROUP BY 'contractType' ORDER BY 'contractType' DESC";
     queryText = encodeURIComponent(queryString);
     gvizQuery = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
-    gvizQuery.send(function(response) 
-    {
+    gvizQuery.send(function(response) {
       var data = response.getDataTable();
       var view = new google.visualization.DataView(data);
 
@@ -293,8 +287,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     queryString = "SELECT 'status', count(status) FROM " + "1n_vrhZ_gRfyv_Zg-lNBdeRfmQq62CNUgG8crWdGn" + " WHERE " + provinceFilterString + " GROUP BY 'status' ORDER BY 'status' DESC";
     queryText = encodeURIComponent(queryString);
     gvizQuery = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
-    gvizQuery.send(function(response) 
-    {
+    gvizQuery.send(function(response) {
       var data = response.getDataTable();
       var view = new google.visualization.DataView(data);
 

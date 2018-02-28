@@ -3,7 +3,8 @@
         "camelcase": 1,
         "comma-dangle": 2,
         "quotes": 0,
-        "no-unused-vars": 1
+        "no-unused-vars": 1,
+        "brace-style": 2
     },
     "parserOptions": {
       "ecmaVersion": 6

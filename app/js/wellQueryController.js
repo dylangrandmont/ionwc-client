@@ -77,14 +77,12 @@ app.controller('wellQueryController', ['$scope', '$rootScope', function($scope, 
     }
   }, false);
 
-  var getPrevNextDate = function(date, increment)
-  {
+  var getPrevNextDate = function(date, increment) {
     var newDate = new Date(date.getTime() + increment);
     return newDate;
   };
 
-  var canAccessGoogleVisualization = function() 
-  {
+  var canAccessGoogleVisualization = function() {
     if ((typeof google === 'undefined') || (typeof google.visualization === 'undefined')) {
       return false;
     } else {
@@ -181,8 +179,7 @@ app.controller('wellQueryController', ['$scope', '$rootScope', function($scope, 
     var queryText = encodeURIComponent(query);
     var gvizQuery = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
 
-    gvizQuery.send(function(response) 
-    {
+    gvizQuery.send(function(response) {
       var dates = new google.visualization.ColumnChart(document.getElementById('variation-time'));
       var data = response.getDataTable();
       var view = new google.visualization.DataView(data);
