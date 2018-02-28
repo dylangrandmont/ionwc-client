@@ -21,6 +21,7 @@
         "semi-spacing": 2,
         "semi-style": 2,
         "space-in-parens": 2,
+        "switch-colon-spacing": 2,
         "quotes": 0,
         "vars-on-top": 1 // Make this a 2
     },

@@ -355,34 +355,34 @@ var landGridService = (function() {
     }
     switch(closestMeridian) {
       case 1:
-      return e1w1TableID;
+        return e1w1TableID;
       case 2:
-      return w1w2TableID;
+        return w1w2TableID;
       case 3:
-      return w2w3TableID;
+        return w2w3TableID;
       case 4:
-      return w3w4TableID;
+        return w3w4TableID;
       case 5:
-      return w4w5TableID;
+        return w4w5TableID;
       default:
-      return w5w6TableID;
+        return w5w6TableID;
     }
   }
 
   function getLabelTableID(tableid) {
     switch(tableid) {
       case w5w6TableID:
-      return w5w6LabelTableID;
+        return w5w6LabelTableID;
       case w4w5TableID:
-      return w4w5LabelTableID;
+        return w4w5LabelTableID;
       case w3w4TableID:
-      return w3w4LabelTableID;
+        return w3w4LabelTableID;
       case w2w3TableID:
-      return w2w3LabelTableID;
+        return w2w3LabelTableID;
       case w1w2TableID:
-      return w1w2LabelTableID;
+        return w1w2LabelTableID;
       case e1w1TableID:
-      return e1w1LabelTableID;
+        return e1w1LabelTableID;
     }
   }
 
@@ -424,29 +424,29 @@ var landGridService = (function() {
     if (map.getZoom() > 12) {
       switch(tableID) {
         case w5w6TableID:
-        clearSectionLayers();
-        w5w6SectionLayer.setMap(map);
-        break;
+          clearSectionLayers();
+          w5w6SectionLayer.setMap(map);
+          break;
         case w4w5TableID:
-        clearSectionLayers();
-        w4w5SectionLayer.setMap(map);
-        break;
+          clearSectionLayers();
+          w4w5SectionLayer.setMap(map);
+          break;
         case w3w4TableID:
-        clearSectionLayers();
-        w3w4SectionLayer.setMap(map);
-        break;
+          clearSectionLayers();
+          w3w4SectionLayer.setMap(map);
+          break;
         case w2w3TableID:
-        clearSectionLayers();
-        w2w3SectionLayer.setMap(map);
-        break;
+          clearSectionLayers();
+          w2w3SectionLayer.setMap(map);
+          break;
         case w1w2TableID:
-        clearSectionLayers();
-        w1w2SectionLayer.setMap(map);
-        break;
+          clearSectionLayers();
+          w1w2SectionLayer.setMap(map);
+          break;
         case e1w1TableID:
-        clearSectionLayers();
-        e1w1SectionLayer.setMap(map);
-        break;
+          clearSectionLayers();
+          e1w1SectionLayer.setMap(map);
+          break;
       }
 
       redrawLayers();
@@ -723,6 +723,6 @@ var landGridService = (function() {
 
   return {
     toggleLandGrid: toggleLandGrid
-  }
+  };
 
 })();
