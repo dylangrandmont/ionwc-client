@@ -32,7 +32,7 @@ var landSaleDateRangeTable = "<table class='range-table'>" +
 "<tr><td class='range-td'>MB</td><td class='range-td'>01/01/2016</td><td class='range-td'>Present</td></tr>" +
 "</table>";
 
-var wellAttributions = "<p>Well data is sourced from provincial regulators: <a href='https://www.bcogc.ca/industry-zone/activity-levels' target='_blank'>British Columbia Oil and Gas Commission</a>, <a href='http://www.aer.ca/data-and-publications/statistical-reports/st1' target='_blank'>Alberta Energy Regulator</a>, government of <a href='http://www.economy.gov.sk.ca/oilandgas/wellbullfile/archives/' target='_blank'>Saskatchewan</a>, and government of <a href='http://www.gov.mb.ca/iem/petroleum/reports/' target='_blank'>Manitoba</a>. Geological edges are sourced from the Alberta Geological Survey's <a href='http://ags.aer.ca/reports/atlas-of-the-western-canada-sedimentary-basin' target='_blank'>Atlas of the Western Canada Sedimentary Basin</a>. The DLS grid as well as the British Columbia NTS grids are sourced from Natural Resources Canada and are available under the Open Government Licence <a href='http://geogratis.gc.ca/api/en/nrcan-rncan/ess-sst/f907a02c-f592-5261-ab4e-4bdae67a73ad.html'>here</a>.</p>"
+var wellAttributions = "<p>Well data is sourced from provincial regulators: <a href='https://www.bcogc.ca/industry-zone/activity-levels' target='_blank'>British Columbia Oil and Gas Commission</a>, <a href='http://www.aer.ca/data-and-publications/statistical-reports/st1' target='_blank'>Alberta Energy Regulator</a>, government of <a href='http://www.economy.gov.sk.ca/oilandgas/wellbullfile/archives/' target='_blank'>Saskatchewan</a>, and government of <a href='http://www.gov.mb.ca/iem/petroleum/reports/' target='_blank'>Manitoba</a>. Geological edges are sourced from the Alberta Geological Survey's <a href='http://ags.aer.ca/reports/atlas-of-the-western-canada-sedimentary-basin' target='_blank'>Atlas of the Western Canada Sedimentary Basin</a>. The DLS grid as well as the British Columbia NTS grids are sourced from Natural Resources Canada and are available under the Open Government Licence <a href='http://geogratis.gc.ca/api/en/nrcan-rncan/ess-sst/f907a02c-f592-5261-ab4e-4bdae67a73ad.html'>here</a>.</p>";
 var landSaleAttributions = "Land posting data is sourced from provincial bodies: <a href='http://www.energy.alberta.ca/Tenure/607.asp' target='_blank'>Alberta Energy</a>, <a href='http://www2.gov.bc.ca/gov/content/industry/natural-gas-oil/petroleum-natural-gas-tenure' target='_blank'>government of British Columbia</a>, <a href='http://www.economy.gov.sk.ca/pngdispositions' target='_blank'>government of Saskatchewan</a>, and <a href='http://www.gov.mb.ca/iem/petroleum/landinfo/landsale.html' target='_blank'>government of Manitoba</a>. Geological edges are sourced from the Alberta Geological Survey's <a href='http://ags.aer.ca/reports/atlas-of-the-western-canada-sedimentary-basin' target='_blank'>Atlas of the Western Canada Sedimentary Basin</a>. The DLS grid as well as the British Columbia NTS grids are sourced from Natural Resources Canada and are available under the Open Government Licence <a href='http://geogratis.gc.ca/api/en/nrcan-rncan/ess-sst/f907a02c-f592-5261-ab4e-4bdae67a73ad.html'>here</a>.";
 
 var disclaimer = "The information contained within this page is believed to be true and accurate at its time \
@@ -60,7 +60,7 @@ var chartOptions = {
   hAxis: {},
   vAxis: {format: 'short'},
   chartArea: {left: '14%', width:'89%'}
-}
+};
 
 var tableOptions = {
   width: 320,

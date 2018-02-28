@@ -62,19 +62,19 @@ var dashboardApp = angular.module('dashboardApp', [])
     localStorage.licensee = '';
 
     updateCharts();
-  }
+  };
 
   $scope.resetZone = function() {
     localStorage.zone = '';
 
     updateCharts();
-  }
+  };
 
   $scope.resetFluid = function() {
     localStorage.fluid = '';
 
     updateCharts();
-  }
+  };
 
   $scope.resetAll = function() {
     localStorage.licensee = '';
@@ -82,7 +82,7 @@ var dashboardApp = angular.module('dashboardApp', [])
     localStorage.fluid = '';
 
     updateCharts();
-  }
+  };
 
   var updateCurrentView = function() {
     $scope.viewType = localStorage.viewType;
@@ -104,7 +104,7 @@ var dashboardApp = angular.module('dashboardApp', [])
     $scope.chartTitle = "Wells Spudded";
     $scope.dataDate = "DrillDate";
     $scope.data = {title:"Well Activity"};
-  }
+  };
 
   onLicencesSelected = function() {
     $scope.infoWindowDate = "License Date:"; 
@@ -114,14 +114,14 @@ var dashboardApp = angular.module('dashboardApp', [])
     $scope.chartTitle = "Issued Licences"; 
     $scope.dataDate = "Date";
     $scope.data = {title:"Well Licences"};
-  }
+  };
 
   updateCharts = function() {
       updateOperatorsChart();
       updateZonesChart();
       updateFluidsChart();
       updateTimeChart();
-  }
+  };
 
   var updateOperatorsChart = function() {
     var queryOperators = "SELECT 'Licensee', count(Licensee) AS " + $scope.chartDataType + " FROM " + 

@@ -39,4 +39,4 @@ var LayerManager = {
         from: tableIDs.previousLandSale
       }
     })
-}
+};

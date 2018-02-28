@@ -34,15 +34,15 @@ app.controller('wellQueryController', ['$scope', '$rootScope', function($scope, 
   };
 
   $scope.$watch('fromDate', function() {
-    $scope.onWellQueryChange(true)
+    $scope.onWellQueryChange(true);
   });
 
   $scope.$watch('toDate', function() {
-    $scope.onWellQueryChange(true)
+    $scope.onWellQueryChange(true);
   });
 
   $rootScope.$watch('viewType', function() {
-    $scope.onWellQueryChange(true)
+    $scope.onWellQueryChange(true);
   });
 
   $scope.fromDatePopup = {

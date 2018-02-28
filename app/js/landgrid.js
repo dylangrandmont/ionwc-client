@@ -389,18 +389,15 @@ function updateSectionsText(response) {
   if (responseTable !== null) {
     numRows = responseTable.getNumberOfRows();
 
-    for(i = 0; i < numRows; i++) {
-      var latlng = response.getDataTable().getValue(i, 0).toString().replace('<Point><coordinates>', '').replace('</coordinates></Point>', '')
-      var lng = latlng.split(',')[0];
-      var lat = latlng.split(',')[1];
-      var sectionString = response.getDataTable().getValue(i, 1).toString();
+    for (i = 0; i < numRows; i++) {
+      const coordinates = getCoordinatesFromRow(response, i);
       var point = new google.maps.LatLng(
-        parseFloat(lat),
-        parseFloat(lng)
+        parseFloat(coordinates.lat),
+        parseFloat(coordinates.lng)
       );
 
       sectionLabels.push(new InfoBox({
-        content: sectionString,
+        content: coordinates.sectionString,
         boxStyle: {
           border: "0px solid black",
           textAlign: "center",
@@ -496,17 +493,15 @@ function updateTownshipsText(response) {
       labelOffset = -25;
     }
 
-    for(i = 0; i < numRows; i++) {
-      var latlng = response.getDataTable().getValue(i, 0).toString().replace('<Point><coordinates>', '').replace('</coordinates></Point>', '')
-      var lng = latlng.split(',')[0];
-      var lat = latlng.split(',')[1];
-      var sectionString = response.getDataTable().getValue(i, 1).toString();
+    for (i = 0; i < numRows; i++) {
+      const coordinates = getCoordinatesFromRow(response, i);
       var point = new google.maps.LatLng(
-        parseFloat(lat),
-        parseFloat(lng)
+        parseFloat(coordinates.lat),
+        parseFloat(coordinates.lng)
       );
+
       townshipLabels.push(new InfoBox({
-        content: sectionString,
+        content: coordinates.sectionString,
         boxStyle: {
           border: "0px solid black",
           textAlign: "center",
@@ -540,17 +535,15 @@ function update250kLabelsText(response) {
   if (responseTable !== null) {
     numRows = responseTable.getNumberOfRows();
 
-    for(i = 0; i < numRows; i++) {
-      var latlng = response.getDataTable().getValue(i, 0).toString().replace('<Point><coordinates>', '').replace('</coordinates></Point>', '')
-      var lng = latlng.split(',')[0];
-      var lat = latlng.split(',')[1];
-      var sectionString = response.getDataTable().getValue(i, 1).toString();
+    for (i = 0; i < numRows; i++) {
+      const coordinates = getCoordinatesFromRow(response, i);
       var point = new google.maps.LatLng(
-        parseFloat(lat),
-        parseFloat(lng)
+        parseFloat(coordinates.lat),
+        parseFloat(coordinates.lng)
       );
+
       nts250kLabels.push(new InfoBox({
-        content: sectionString,
+        content: coordinates.sectionString,
         boxStyle: {
           border: "0px solid black",
           textAlign: "center",
@@ -583,17 +576,15 @@ function update50kLabelsText(response) {
   if (responseTable !== null) {
     numRows = responseTable.getNumberOfRows();
 
-    for(i = 0; i < numRows; i++) {
-      var latlng = response.getDataTable().getValue(i, 0).toString().replace('<Point><coordinates>', '').replace('</coordinates></Point>', '')
-      var lng = latlng.split(',')[0];
-      var lat = latlng.split(',')[1];
-      var sectionString = response.getDataTable().getValue(i, 1).toString();
+    for (i = 0; i < numRows; i++) {
+      const coordinates = getCoordinatesFromRow(response, i);
       var point = new google.maps.LatLng(
-        parseFloat(lat),
-        parseFloat(lng)
+        parseFloat(coordinates.lat),
+        parseFloat(coordinates.lng)
       );
+
       nts50kLabels.push(new InfoBox({
-        content: sectionString,
+        content: coordinates.sectionString,
         boxStyle: {
           border: "0px solid black",
           textAlign: "center",
@@ -625,17 +616,15 @@ function updateNTSBlockLabelsText(response) {
   if (responseTable !== null) {
     numRows = responseTable.getNumberOfRows();
 
-    for(i = 0; i < numRows; i++) {
-      var latlng = response.getDataTable().getValue(i, 0).toString().replace('<Point><coordinates>', '').replace('</coordinates></Point>', '')
-      var lng = latlng.split(',')[0];
-      var lat = latlng.split(',')[1];
-      var sectionString = response.getDataTable().getValue(i, 1).toString();
+    for (i = 0; i < numRows; i++) {
+      const coordinates = getCoordinatesFromRow(response, i);
       var point = new google.maps.LatLng(
-        parseFloat(lat),
-        parseFloat(lng)
+        parseFloat(coordinates.lat),
+        parseFloat(coordinates.lng)
       );
+
       ntsBlockLabels.push(new InfoBox({
-        content: sectionString,
+        content: coordinates.sectionString,
         boxStyle: {
           border: "0px solid black",
           textAlign: "center",
@@ -669,7 +658,10 @@ function updateNTSUnitLabelsText(response) {
 
     for (i = 0; i < numRows; i++) {
       const coordinates = getCoordinatesFromRow(response, i);
-      var point = new google.maps.LatLng(parseFloat(coordinates.lat), parseFloat(coordinates.lng));
+      var point = new google.maps.LatLng(
+        parseFloat(coordinates.lat),
+        parseFloat(coordinates.lng)
+      );
 
       ntsUnitLabels.push(new InfoBox({
         content: coordinates.sectionString,
@@ -692,7 +684,7 @@ function updateNTSUnitLabelsText(response) {
 }
 
 function getCoordinatesFromRow(response, rowIndex) {
-  const latlng = response.getDataTable().getValue(rowIndex, 0).toString().replace('<Point><coordinates>', '').replace('</coordinates></Point>', '')
+  const latlng = response.getDataTable().getValue(rowIndex, 0).toString().replace('<Point><coordinates>', '').replace('</coordinates></Point>', '');
   const lng = latlng.split(',')[0];
   const lat = latlng.split(',')[1];
 
@@ -702,7 +694,7 @@ function getCoordinatesFromRow(response, rowIndex) {
     'lng': lng,
     'lat': lat,
     'sectionString': sectionString
-  }
+  };
 }
 
 function toggleLandGrid() {

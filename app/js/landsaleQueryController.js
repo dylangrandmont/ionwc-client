@@ -93,7 +93,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
   $scope.setFormation = function(age) {
       $scope.age = age;
       $scope.onLandSaleQueryChange();
-  }
+  };
 
   $scope.fromDateOptions = {
     maxDate: new Date(2020, 0, 0),
@@ -116,11 +116,11 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
   };
 
   $scope.$watch('previousFromDate', function() {
-    $scope.onLandSaleQueryChange()
+    $scope.onLandSaleQueryChange();
   });
 
   $scope.$watch('previousToDate', function() {
-    $scope.onLandSaleQueryChange()
+    $scope.onLandSaleQueryChange();
   });
 
   $scope.fromDatePopup = {
@@ -372,8 +372,8 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     queryStrings = {
       'upComingQuery': upComingQuery,
       'previousQuery': previousQuery
-    }
+    };
 
     return queryStrings;
-  }
+  };
 }]);

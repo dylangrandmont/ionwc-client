@@ -1,6 +1,6 @@
 var svg = d3.select("#test")
   .append("svg").attr("id", "chart-test")
-  .append("g")
+  .append("g");
 
 svg.append("g")
   .attr("class", "slices");
@@ -64,7 +64,7 @@ function mergeWithFirstEqualZero(first, second){
 
   var onlyFirst = first
     .filter(function(d) {
-      return !secondSet.has(d.label)
+      return !secondSet.has(d.label);
     })
     .map(function(d) {
       return {label: d.label, value: 0};
@@ -80,7 +80,7 @@ function change(data) {
   var duration = 2000;
   var data0 = svg.select(".slices").selectAll("path.slice")
     .data().map(function(d) {
-      return d.data
+      return d.data;
     });
   if (data0.length == 0) data0 = data;
   var was = mergeWithFirstEqualZero(data, data0);

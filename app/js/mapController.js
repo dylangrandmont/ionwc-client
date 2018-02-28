@@ -32,7 +32,7 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
      + "<b>Field/Pool: </b>" + e.row['Field/Pool'].value + "<br>"
      + "<b>Terminating Zone: </b>" + e.row['TerminatingZone'].value + "<br>"
      + "<b>Orientation: </b>" + e.row['Orientation'].value + "<br>"
-     + "<b>Substance: </b>" + e.row['Substance'].value + "<br>"
+     + "<b>Substance: </b>" + e.row['Substance'].value + "<br>";
     
     infoWindowContent = infowindow.setContent(content);
     infowindow.setPosition(e.latLng);
@@ -55,7 +55,7 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
      + "<b>Field/Pool: </b>" + e.row['Field/Pool'].value + "<br>"
      + "<b>Terminating Zone: </b>" + e.row['TerminatingZone'].value + "<br>"
      + "<b>Orientation: </b>" + e.row['Orientation'].value + "<br>"
-     + "<b>Substance: </b>" + e.row['Substance'].value + "<br>"
+     + "<b>Substance: </b>" + e.row['Substance'].value + "<br>";
     
     infoWindowContent = infowindow.setContent(content);
     infowindow.setPosition(e.latLng);
@@ -265,15 +265,14 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
         elem.webkitRequestFullscreen();
       }
     }
-  }
+  };
 
   $scope.toggleLegend = function() {
     $scope.showLegend = !$scope.showLegend;
-  }
+  };
 
   $scope.toggleSupportModal = function() {
     $rootScope.showSupportModal = !$rootScope.showSupportModal;
-
-  }
+  };
 
 }]);
