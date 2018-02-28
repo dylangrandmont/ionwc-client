@@ -39,7 +39,6 @@ var costsData = [{label: "Hosting (CAD$152)", value: 152.0}, {label: "Domain (CA
 var contributionsData = [{label: "Contributions (CAD$5)", value: 5.0}, {label: "Remainder (CAD$172)", value: 172.0 }];
 
 function switchData (){
-  var labels = color.domain();
   if (viewingCosts) {
     viewingCosts = !viewingCosts;
     return costsData;

@@ -1,4 +1,4 @@
-app.controller('wellQueryController', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
+app.controller('wellQueryController', ['$scope', '$rootScope', function($scope, $rootScope) {
 
   $scope.licensee = '';
   $scope.zone = '';

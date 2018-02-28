@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('annotationController', ['$scope', '$sce', function($scope, $sce) {
+app.controller('annotationController', ['$scope', function($scope) {
 
   $scope.geoEdgesCheckboxes = [{
     label:"Upper Cardium Shoreface",
