@@ -101,28 +101,29 @@ app.controller('annotationController', ['$scope', function($scope) {
   $scope.geologicalEdges = [];
   $scope.licensingTrends = [];
 
-  for (var i in $scope.geoEdgesCheckboxes) {
-    var geologicalEdge = new google.maps.KmlLayer($scope.geoEdgesCheckboxes[i].url, {
+  $scope.geoEdgesCheckboxes.forEach(function(geoEdgesCheckbox) {
+    var geologicalEdge = new google.maps.KmlLayer(geoEdgesCheckbox.url, {
       preserveViewport: true,
       suppressInfoWindows: true
     });
 
     $scope.geologicalEdges.push(geologicalEdge);
-  }
+  });
 
-  for (var i in $scope.licensingTrendsCheckboxes) {
+  $scope.licensingTrendsCheckboxes.forEach(function(licensingTrendsCheckbox) {
     var licensingTrend = new google.maps.FusionTablesLayer({
       query: {
         select: '\'Geocodable address\'',
         from: '1y5xOfRjx-FnsGz7LWc4SeJNoOxgG54i7V-6iEsnX',
-        where: $scope.licensingTrendsCheckboxes[i].queryWhere
+        where: licensingTrendsCheckbox.queryWhere
       },
       heatmap: {
         enabled: true
       }
     });
+
     $scope.licensingTrends.push(licensingTrend);
-  }
+  });
 
   $scope.$watch("geoEdgesCheckboxes", function(n){
     for (var i in n) {
