@@ -1,5 +1,5 @@
 var svg = d3.select("#test")
-  .append("svg").attr("id","chart-test")
+  .append("svg").attr("id", "chart-test")
   .append("g")
 
 svg.append("g")
@@ -71,7 +71,7 @@ function mergeWithFirstEqualZero(first, second){
     });
 
   return d3.merge([ second, onlyFirst ])
-    .sort(function(a,b) {
+    .sort(function(a, b) {
       return d3.ascending(a.label, b.label);
     });
 }

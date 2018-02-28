@@ -224,12 +224,12 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
 
       var view = new google.visualization.DataView(data);
 
-      view.setColumns([0,1]);
+      view.setColumns([0, 1]);
       prevSalesList = new google.visualization.ColumnChart(document.getElementById('stats-bonus-chart'));
       chartOptions.title = 'Total Sales Bonuses';
       prevSalesList.draw(view, chartOptions);
 
-      view.setColumns([0,2]);
+      view.setColumns([0, 2]);
       hectaresList = new google.visualization.ColumnChart(document.getElementById('stats-hectares-chart'));
       chartOptions.title = 'Total Hectares Purchased';
       hectaresList.draw(view, chartOptions);

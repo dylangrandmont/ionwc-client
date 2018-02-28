@@ -10,7 +10,7 @@ var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', '
 ]);
 
 google.charts.load("current", {
-  packages:['table','corechart'],
+  packages:['table', 'corechart'],
   callback: function() {
     angular.bootstrap(document, ['mapApp']);
   }

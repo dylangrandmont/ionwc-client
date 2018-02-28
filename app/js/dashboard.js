@@ -276,7 +276,7 @@ var dashboardApp = angular.module('dashboardApp', [])
 }]);
 
 
-google.charts.load("current", {packages:['table','corechart']});
+google.charts.load("current", {packages:['table', 'corechart']});
 google.charts.setOnLoadCallback(function() {
     angular.bootstrap(document, ['dashboardApp']);
 });

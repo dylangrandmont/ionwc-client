@@ -119,13 +119,13 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
   $('#data-panel').scroll(function(){
     var elementPosition = $('#province-header').offset();
     if ($('#charts').offset().top > 105) {
-      $('#province-header').css('position','relative').css('top','0px')
-        .css('width','100%');
-      $('#province-header-filler').css('height','0px');
+      $('#province-header').css('position', 'relative').css('top', '0px')
+        .css('width', '100%');
+      $('#province-header-filler').css('height', '0px');
     } else if (elementPosition.top <= 55) {
-      $('#province-header').css('position','fixed').css('top','55px')
-        .css('width',$('#charts').width());
-      $('#province-header-filler').css('height','50px');
+      $('#province-header').css('position', 'fixed').css('top', '55px')
+        .css('width', $('#charts').width());
+      $('#province-header-filler').css('height', '50px');
     }   
   });
 

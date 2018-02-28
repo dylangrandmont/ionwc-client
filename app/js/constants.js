@@ -85,7 +85,7 @@ var pieChartOptions = {
   width: 320, 
   height: 200,  
   is3D: true,
-  chartArea: {width:'92%', height: '80%',top:'20%', left: '4%'},
+  chartArea: {width:'92%', height: '80%', top:'20%', left: '4%'},
   sliceVisibilityThreshold: 0.01,   
   pieSliceTextStyle: {color: 'black'},
   legend: {position: 'labeled'},

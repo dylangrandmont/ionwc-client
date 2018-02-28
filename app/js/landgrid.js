@@ -548,20 +548,20 @@ function update250kLabelsText(response) {
         parseFloat(lat),
         parseFloat(lng));
       nts250kLabels.push(new InfoBox({
-        content: sectionString
-        ,boxStyle: {
+        content: sectionString,
+        boxStyle: {
           border: "0px solid black",
           textAlign: "center",
           color: "black",
           fontSize: "12pt",
           width: "75px"
-        }
-        ,disableAutoPan: true
-        ,pixelOffset: new google.maps.Size(-37, -11)
-        ,position: point
-        ,closeBoxURL: ""
-        ,isHidden: false
-        ,enableEventPropagation: true
+        },
+        disableAutoPan: true,
+        pixelOffset: new google.maps.Size(-37, -11),
+        position: point,
+        closeBoxURL: "",
+        isHidden: false,
+        enableEventPropagation: true
       }));
       nts250kLabels[nts250kLabels.length-1].open(map);
     }
@@ -590,19 +590,19 @@ function update50kLabelsText(response) {
         parseFloat(lat),
         parseFloat(lng));
       nts50kLabels.push(new InfoBox({
-        content: sectionString
-        ,boxStyle: {
-          border: "0px solid black"
-          ,textAlign: "center"
-          ,fontSize: "11pt"
-          ,width: "40px"
-        }
-        ,disableAutoPan: true
-        ,pixelOffset: new google.maps.Size(-20, -5)
-        ,position: point
-        ,closeBoxURL: ""
-        ,isHidden: false
-        ,enableEventPropagation: true
+        content: sectionString,
+        boxStyle: {
+          border: "0px solid black",
+          textAlign: "center",
+          fontSize: "11pt",
+          width: "40px"
+        },
+        disableAutoPan: true,
+        pixelOffset: new google.maps.Size(-20, -5),
+        position: point,
+        closeBoxURL: "",
+        isHidden: false,
+        enableEventPropagation: true
       }));
       nts50kLabels[nts50kLabels.length-1].open(map);
     }
@@ -631,19 +631,19 @@ function updateNTSBlockLabelsText(response) {
         parseFloat(lat),
         parseFloat(lng));
       ntsBlockLabels.push(new InfoBox({
-        content: sectionString
-        ,boxStyle: {
-          border: "0px solid black"
-          ,textAlign: "center"
-          ,fontSize: "9pt"
-          ,width: "40px"
-        }
-        ,disableAutoPan: true
-        ,pixelOffset: new google.maps.Size(-20, -5)
-        ,position: point
-        ,closeBoxURL: ""
-        ,isHidden: false
-        ,enableEventPropagation: true
+        content: sectionString,
+        boxStyle: {
+          border: "0px solid black",
+          textAlign: "center",
+          fontSize: "9pt",
+          width: "40px"
+        },
+        disableAutoPan: true,
+        pixelOffset: new google.maps.Size(-20, -5),
+        position: point,
+        closeBoxURL: "",
+        isHidden: false,
+        enableEventPropagation: true
       }));
       ntsBlockLabels[ntsBlockLabels.length-1].open(map);
     }
@@ -668,19 +668,19 @@ function updateNTSUnitLabelsText(response) {
       var point = new google.maps.LatLng(parseFloat(coordinates.lat), parseFloat(coordinates.lng));
 
       ntsUnitLabels.push(new InfoBox({
-        content: coordinates.sectionString
-        ,boxStyle: {
-          border: "0px solid black"
-          ,textAlign: "center"
-          ,fontSize: "8pt"
-          ,width: "40px"
-        }
-        ,disableAutoPan: true
-        ,pixelOffset: new google.maps.Size(-20, -5)
-        ,position: point
-        ,closeBoxURL: ""
-        ,isHidden: false
-        ,enableEventPropagation: true
+        content: coordinates.sectionString,
+        boxStyle: {
+          border: "0px solid black",
+          textAlign: "center",
+          fontSize: "8pt",
+          width: "40px"
+        },
+        disableAutoPan: true,
+        pixelOffset: new google.maps.Size(-20, -5),
+        position: point,
+        closeBoxURL: "",
+        isHidden: false,
+        enableEventPropagation: true
       }));
       ntsUnitLabels[ntsUnitLabels.length-1].open(map);
     }
