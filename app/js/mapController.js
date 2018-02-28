@@ -8,6 +8,7 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
   $rootScope.showUpcoming = true;
 
   $scope.showLegend = false;
+  $rootScope.showSupportModal = true;
 
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
@@ -269,6 +270,10 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
 
   $scope.toggleLegend = function() {
     $scope.showLegend = !$scope.showLegend;
+  }
+
+  $scope.toggleSupportModal = function() {
+    $rootScope.showSupportModal = !$rootScope.showSupportModal;
   }
 
 }]);

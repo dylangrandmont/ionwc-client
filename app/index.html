@@ -32,7 +32,8 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="../deps/v3-utility-library/master/infobox/src/infobox.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
-    <script sr="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0/angular-material.js"></script>
+    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0/angular-material.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <script type="text/javascript" src="js/dateService.js" defer></script>
     <script type="text/javascript" src="js/constants.js?v=2017-09-12" defer></script>
@@ -52,8 +53,6 @@
         var infoModal = document.getElementById("infoModal");
         var infoButton = document.getElementById("info-icon");
         var closeInfo = document.getElementById("closeInfo");
-
-        var closeAd = document.getElementById("closeAd");
 
         infoModal.style.display = 'block';
         infoButton.onclick = function() {
@@ -105,6 +104,9 @@
                   <a ng-click="onSelectLandSales();" style="background-color:#f4511e;">Land Sales</a>
                 </div>
               </li>
+              <li class="w3-small">
+                <a ng-click="toggleSupportModal();" class="w3-hover-none" style="height:50px; vertical-align: middle;">SUPPORT </a> 
+              </li>
               <li class="w3-small w3-dropdown-hover">
                 <a href="javascript:void(0)"  class="w3-hover-none" style="height:50px; vertical-align: middle;"><span class="glyphicon glyphicon-cog"></span> <i class="fa fa-caret-down"></i></a>     
                 <div class="w3-dropdown-content w3-white w3-card-4" style="background-color:#f4511e;">
@@ -150,6 +152,11 @@
         </div>
       </div>
 
+      <div id="supportModal" ng-show="showSupportModal" style="z-index: 10; padding-top: 55px;">
+        <div class="modal-content" style="width:96%; max-width: 750px">
+          <h4>Support modal</h4>
+        </div>
+      </div>
       <div id="map"></div>
       <div>
       <div id="data-panel">
