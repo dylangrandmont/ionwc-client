@@ -151,9 +151,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
       var salesList = new google.visualization.Table(document.getElementById('sales-dates-list'));
       var data = response.getDataTable();
 
-      var formatter = new google.visualization.NumberFormat(
-        {fractionDigits: '2'}
-        );
+      var formatter = new google.visualization.NumberFormat({fractionDigits: '2'});
       formatter.format(data, 2);
 
       var view = new google.visualization.DataView(data);
@@ -217,9 +215,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     gvizQuery.send(function(response) {
       var data = response.getDataTable();
 
-      var formatter = new google.visualization.NumberFormat(
-        { prefix: '$'}
-        );
+      var formatter = new google.visualization.NumberFormat({prefix: '$'});
       formatter.format(data, 1);
 
       var view = new google.visualization.DataView(data);
@@ -240,9 +236,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     gvizQuery = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
     gvizQuery.send(function(response) {
       var data = response.getDataTable();
-      var formatter = new google.visualization.NumberFormat(
-        { prefix: '$'}
-        );
+      var formatter = new google.visualization.NumberFormat({ prefix: '$'});
       formatter.format(data, 1);
       var view = new google.visualization.DataView(data);
       var clientList = new google.visualization.ColumnChart(document.getElementById('stats-client-bonus-chart'));
@@ -258,9 +252,7 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     gvizQuery = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
     gvizQuery.send(function(response) {
       var data = response.getDataTable();
-      var formatter = new google.visualization.NumberFormat(
-        { suffix: ' ha'}
-        );
+      var formatter = new google.visualization.NumberFormat({suffix: ' ha'});
       formatter.format(data, 1);
       var view = new google.visualization.DataView(data);
 

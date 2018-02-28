@@ -503,7 +503,8 @@ function updateTownshipsText(response) {
       var sectionString = response.getDataTable().getValue(i, 1).toString();
       var point = new google.maps.LatLng(
         parseFloat(lat),
-        parseFloat(lng));
+        parseFloat(lng)
+      );
       townshipLabels.push(new InfoBox({
         content: sectionString,
         boxStyle: {
@@ -546,7 +547,8 @@ function update250kLabelsText(response) {
       var sectionString = response.getDataTable().getValue(i, 1).toString();
       var point = new google.maps.LatLng(
         parseFloat(lat),
-        parseFloat(lng));
+        parseFloat(lng)
+      );
       nts250kLabels.push(new InfoBox({
         content: sectionString,
         boxStyle: {
@@ -588,7 +590,8 @@ function update50kLabelsText(response) {
       var sectionString = response.getDataTable().getValue(i, 1).toString();
       var point = new google.maps.LatLng(
         parseFloat(lat),
-        parseFloat(lng));
+        parseFloat(lng)
+      );
       nts50kLabels.push(new InfoBox({
         content: sectionString,
         boxStyle: {
@@ -629,7 +632,8 @@ function updateNTSBlockLabelsText(response) {
       var sectionString = response.getDataTable().getValue(i, 1).toString();
       var point = new google.maps.LatLng(
         parseFloat(lat),
-        parseFloat(lng));
+        parseFloat(lng)
+      );
       ntsBlockLabels.push(new InfoBox({
         content: sectionString,
         boxStyle: {

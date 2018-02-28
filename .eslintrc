@@ -6,7 +6,8 @@
         "quotes": 0,
         "no-unused-vars": 1,
         "brace-style": 2,
-        "block-spacing": 2
+        "block-spacing": 2,
+        "function-paren-newline": 2
     },
     "parserOptions": {
       "ecmaVersion": 6
