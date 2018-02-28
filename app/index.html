@@ -33,8 +33,9 @@
     <script type="text/javascript" src="../deps/v3-utility-library/master/infobox/src/infobox.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
     <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0/angular-material.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
 
+    <script src="js/supportModal.js" defer></script>
     <script type="text/javascript" src="js/dateService.js" defer></script>
     <script type="text/javascript" src="js/constants.js?v=2017-09-12" defer></script>
     <script type="text/javascript" src="js/layerManager.js" defer></script>
@@ -154,7 +155,32 @@
 
       <div id="supportModal" ng-show="showSupportModal" style="z-index: 10; padding-top: 55px;">
         <div class="modal-content" style="width:96%; max-width: 750px">
-          <h4>Support modal</h4>
+          <span class="close" ng-click="toggleSupportModal()">×</span>
+          <center>
+            <h2>Help Keep Eye on Western Canada Live</h2>
+            <p>Eye on Western Canada provides data visualizations with open access at no charge. A small donation of CAD$ 5.00, 10.00, or 20.00 helps cover the cost of maintaining this domain with up-to-date information.</p>
+            <br>
+            <h3>Annual Costs vs. Contributions</h3>
+
+            <button class="randomize">{{supportButton}}</button> 
+            <div id="test" style="height: 350px;"></div>
+
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="RAZ4UKGH6E9RA">
+            <table align="center" style="width: 0px;">
+            <tr><td><input type="hidden" name="on0" value="Donation Size">Donation Size</td></tr><tr><td><select name="os0">
+              <option value="5 Dollar Donation">5 Dollar Donation $5.00 CAD</option>
+              <option value="10 Dollar Donation">10 Dollar Donation $10.00 CAD</option>
+              <option value="20 Dollar Donation">20 Dollar Donation $20.00 CAD</option>
+            </select> </td></tr>
+            </table>
+            <input type="hidden" name="currency_code" value="CAD">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+
+          </center>
         </div>
       </div>
       <div id="map"></div>

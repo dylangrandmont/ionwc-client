@@ -8,7 +8,8 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
   $rootScope.showUpcoming = true;
 
   $scope.showLegend = false;
-  $rootScope.showSupportModal = true;
+  $rootScope.showSupportModal = false;
+  $scope.supportButton = "View 2018 Contributions";
 
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
@@ -274,6 +275,7 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
 
   $scope.toggleSupportModal = function() {
     $rootScope.showSupportModal = !$rootScope.showSupportModal;
+
   }
 
 }]);
