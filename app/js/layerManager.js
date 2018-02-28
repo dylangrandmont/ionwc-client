@@ -37,6 +37,6 @@ var LayerManager = {
       query: {
         select: '\'Geocodable address\'',
         from: tableIDs.previousLandSale
-      },
+      }
     })
 }

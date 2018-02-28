@@ -87,7 +87,7 @@ function initializeLandGrid() {
   w2w3SectionLayer = new google.maps.FusionTablesLayer({
     query: {
       select: '\'Geocodable address\'',
-      from: w2w3TableID,
+      from: w2w3TableID
     },
     suppressInfoWindows: true,
     options: {
@@ -99,7 +99,7 @@ function initializeLandGrid() {
   w1w2SectionLayer = new google.maps.FusionTablesLayer({
     query: {
       select: '\'Geocodable address\'',
-      from: w1w2TableID,
+      from: w1w2TableID
     },
     suppressInfoWindows: true,
     options: {
@@ -111,7 +111,7 @@ function initializeLandGrid() {
   e1w1SectionLayer = new google.maps.FusionTablesLayer({
     query: {
       select: '\'Geocodable address\'',
-      from: e1w1TableID,
+      from: e1w1TableID
     },
     suppressInfoWindows: true,
     options: {
@@ -123,7 +123,7 @@ function initializeLandGrid() {
   townshipLayer = new google.maps.FusionTablesLayer({
     query: {
       select: '\'Geocodable address\'',
-      from: townshipTableID,
+      from: townshipTableID
     },
     suppressInfoWindows: true,
     options: {
@@ -145,7 +145,7 @@ function initializeLandGrid() {
   ntsBlockLayer = new google.maps.FusionTablesLayer({
     query: {
       select: '\'Geocodable address\'',
-      from: ntsBlockTableID,
+      from: ntsBlockTableID
     },
     suppressInfoWindows: true,
     options: {
@@ -157,7 +157,7 @@ function initializeLandGrid() {
   w112NTSLayer = new google.maps.FusionTablesLayer({
     query: {
       select: '\'Geocodable address\'',
-      from: w112NTSTableID,
+      from: w112NTSTableID
     },
     suppressInfoWindows: true,
     options: {
@@ -169,7 +169,7 @@ function initializeLandGrid() {
   w122NTSLayer = new google.maps.FusionTablesLayer({
     query: {
       select: '\'Geocodable address\'',
-      from: w122NTSTableID,
+      from: w122NTSTableID
     },
     suppressInfoWindows: true,
     options: {

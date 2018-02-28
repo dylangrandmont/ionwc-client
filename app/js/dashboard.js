@@ -236,7 +236,7 @@ var dashboardApp = angular.module('dashboardApp', [])
           slices : slicesColor,
           sliceVisibilityThreshold: 0.01,   
           pieSliceTextStyle: {color: 'black', fontSize: 12},
-          legend: {position: 'labeled'},
+          legend: {position: 'labeled'}
         });
       }
     });

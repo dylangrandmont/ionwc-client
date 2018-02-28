@@ -32,6 +32,7 @@ npm install --save-dev gulp-jasmine
 npm install karma --save-dev
 npm install karma-phantomjs-launcher --save-dev
 npm install karma-jasmine --save-dev
+npm install gulp-eslint
 ```
 
 To run the web client, execute

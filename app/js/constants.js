@@ -1,3 +1,5 @@
+"use strict";
+
 const WELL_LEGEND = "<svg height='10' width='10'>"+
   "<circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='rgb(0,255,0)' />"+
   "</svg> Oil Wells<br><svg height='10' width='10'>"+
@@ -45,7 +47,7 @@ var mapOptions = {
   scaleControl: true,
   streetViewControl: false,
   mapTypeId: google.maps.MapTypeId.TERRAIN,
-  mapTypeControlOptions: {position: google.maps.ControlPosition.BOTTOM_CENTER},
+  mapTypeControlOptions: {position: google.maps.ControlPosition.BOTTOM_CENTER}
 };
 
 var chartOptions = {

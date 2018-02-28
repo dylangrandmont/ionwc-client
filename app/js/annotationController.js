@@ -1,3 +1,5 @@
+'use strict';
+
 app.controller('annotationController', ['$scope', '$sce', function($scope, $sce) {
 
   $scope.geoEdgesCheckboxes = [{
