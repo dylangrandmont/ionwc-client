@@ -192,22 +192,22 @@ var landGridService = (function() {
 
     if (landGridOn) {
       if (zoom >= 6) {
-        clearNTS250kLabels();
-        clearNTS50kLabels();
+        clearLabels(nts250kLabels);
+        clearLabels(nts50kLabels);
         update250kLabels();
 
         if (zoom >= 8) {
-          clearNTSBlockLabels();
+          clearLabels(ntsBlockLabels);
           update50kLabels();
 
           if (zoom >= 9) {
-            clearTownshipLabels();
-            clearSectionLabels();
+            clearLabels(townshipLabels);
+            clearLabels(sectionLabels);
             updateTownships();
             updateNTSBlockLabels();
 
             if (zoom >= 11){
-              clearNTSUnitLabels();
+              clearLabels(ntsUnitLabels);
               enableNTSUnitsInView();
 
               if (zoom >= 12) {
@@ -226,7 +226,7 @@ var landGridService = (function() {
 
     if (landGridOn && zoom >= 5) {
       townshipLayer.setMap(null);
-      clearNTS250kLabels();
+      clearLabels(nts250kLabels);
       if (zoom >= 6) {
         nts50kLayer.setMap(null);
         townshipLayer.setMap(map);
@@ -236,20 +236,20 @@ var landGridService = (function() {
           ntsBlockLayer.setMap(null);
           nts50kLayer.setMap(map);
           redrawLayers();
-          clearNTS50kLabels();
+          clearLabels(nts50kLabels);
           if (zoom >= 8) {
             ntsBlockLayer.setMap(map);
             redrawLayers();
-            clearNTS50kLabels();
-            clearTownshipLabels();
+            clearLabels(nts50kLabels);
+            clearLabels(townshipLabels);
             if (zoom >= 10) {
               w112NTSLayer.setMap(null);
               w122NTSLayer.setMap(null);
               if (zoom >= 11) {
                 clearSectionLayers();
                 if (zoom < 12) {
-                  clearSectionLabels();
-                  clearNTSUnitLabels();
+                  clearLabels(sectionLabels);
+                  clearLabels(ntsUnitLabels);
                 }
               }
             }
@@ -264,12 +264,12 @@ var landGridService = (function() {
       w112NTSLayer.setMap(null);
       w122NTSLayer.setMap(null);
       clearSectionLayers();
-      clearSectionLabels();
-      clearTownshipLabels();
-      clearNTS250kLabels();
-      clearNTS50kLabels();
-      clearNTSBlockLabels();
-      clearNTSUnitLabels();
+      clearLabels(sectionLabels);
+      clearLabels(townshipLabels);
+      clearLabels(nts250kLabels);
+      clearLabels(nts50kLabels);
+      clearLabels(ntsBlockLabels);
+      clearLabels(ntsUnitLabels);
     }
   }
 
@@ -289,47 +289,12 @@ var landGridService = (function() {
     e1w1SectionLayer.setMap(null);
   }
 
-  function clearSectionLabels() {
-    for (var i=0; i<sectionLabels.length; i++) {
-      sectionLabels[i].setMap(null);
-    }
-    sectionLabels = [];
-  }
+  function clearLabels(labels) {
+    labels.forEach(function(label) {
+      label.setMap(null);
+    });
 
-  function clearTownshipLabels() {
-    for (var i=0; i<townshipLabels.length; i++) {
-      townshipLabels[i].setMap(null);
-    }
-    townshipLabels = [];
-  }
-
-  function clearNTS250kLabels() {
-    for (var i=0; i<nts250kLabels.length; i++) {
-      nts250kLabels[i].setMap(null);
-    }
-    nts250kLabels = [];
-  }
-
-  function clearNTS50kLabels() {
-    for (var i=0; i<nts50kLabels.length; i++) {
-      nts50kLabels[i].setMap(null);
-    }
-    nts50kLabels = [];
-  }
-
-  function clearNTSBlockLabels() {
-    for (var i=0; i<ntsBlockLabels.length; i++) {
-      ntsBlockLabels[i].setMap(null);
-    }
-    ntsBlockLabels = [];
-  }
-
-
-  function clearNTSUnitLabels() {
-    for (var i=0; i<ntsUnitLabels.length; i++) {
-      ntsUnitLabels[i].setMap(null);
-    }
-    ntsUnitLabels = [];
+    labels = [];
   }
 
   function updateSections() {
