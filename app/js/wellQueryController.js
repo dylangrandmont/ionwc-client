@@ -145,8 +145,8 @@ app.controller('wellQueryController', ['$scope', '$rootScope', function($scope, 
       "containerId": "operators-chart",
       "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=", 
       "query":"SELECT 'Licensee', count(Licensee) AS '' FROM " + tableID + " WHERE 'Licensee' CONTAINS IGNORING CASE '" + 
-        $scope.licensee + "' AND 'TerminatingZone' CONTAINS IGNORING CASE '" + $scope.zone + 
-        "' AND 'Substance' CONTAINS IGNORING CASE '" + $scope.fluid  + "' AND  '" + dateString + 
+        $scope.licensee + "' AND 'TerminatingZone' CONTAINS IGNORING CASE '" + $scope.zone +
+        "' AND 'Substance' CONTAINS IGNORING CASE '" + $scope.fluid + "' AND  '" + dateString +
         "' >= '" + dateService.getReformatedDate($scope.fromDate) + "' AND '" + dateString + "' <= '" + dateService.getReformatedDate($scope.toDate) + 
         "' AND 'latitude' >= '" + $rootScope.swLat + "' AND 'latitude' <= '" + 
           $rootScope.neLat + "' AND 'longitude' <= '" + $rootScope.neLng + "' AND 'longitude' >= '" + 

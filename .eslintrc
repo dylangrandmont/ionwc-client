@@ -11,8 +11,9 @@
         "func-call-spacing": 2,
         "function-paren-newline": 2,
         "multiline-comment-style": 2,
+        "no-multi-spaces": 2,
         "no-unused-expressions": 2,
-        "no-unused-vars": 1,
+        "no-unused-vars": 0, // Make this a 2
         "no-useless-return": 2,
         "object-curly-spacing": 2,
         "operator-assignment": 2,

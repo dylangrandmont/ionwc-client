@@ -27,7 +27,7 @@ var outerArc = d3.svg.arc()
   .innerRadius(radius * 0.9)
   .outerRadius(radius * 0.9);
 
-svg.attr("transform", "translate(" + width  + "," + height + ")");
+svg.attr("transform", "translate(" + width + "," + height + ")");
 
 var key = function(d) {
   return d.data.label;

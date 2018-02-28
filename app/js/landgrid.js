@@ -334,9 +334,9 @@ function updateSections() {
   closestSectionLabelTableID = getLabelTableID(closestSectionTableID);
   enableClosestSectionMap(closestSectionTableID);
 
-  var queryStr = "SELECT 'geometry', 'SC' FROM "+ closestSectionLabelTableID + " WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";  ;   
+  var queryStr = "SELECT 'geometry', 'SC' FROM "+ closestSectionLabelTableID + " WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";   
   var queryText = encodeURIComponent(queryStr);
-  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq='  + queryText);
+  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
 
   query.send(updateSectionsText);
 }
@@ -468,9 +468,9 @@ function enableNTSUnitsInView() {
 }
 
 function updateTownships() {
-  var queryStr = "SELECT 'geometry', 'DLS_ID' FROM 1BDEHLkR0cR_UEOB0IvIfTu5pP5GDYI0CCQ1ioweU WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";  ;   
+  var queryStr = "SELECT 'geometry', 'DLS_ID' FROM 1BDEHLkR0cR_UEOB0IvIfTu5pP5GDYI0CCQ1ioweU WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";   
   var queryText = encodeURIComponent(queryStr);
-  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq='  + queryText);
+  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
   query.send(updateTownshipsText);
 }
 
@@ -523,9 +523,9 @@ function updateTownshipsText(response) {
 
 
 function update250kLabels() {
-  var queryStr = "SELECT 'geometry', 'NTS_ID' FROM 1w4ZpQgXgzKsX2OswFGn70XpyltsYJnVaP1i7zQ9I WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";  ;   
+  var queryStr = "SELECT 'geometry', 'NTS_ID' FROM 1w4ZpQgXgzKsX2OswFGn70XpyltsYJnVaP1i7zQ9I WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";   
   var queryText = encodeURIComponent(queryStr);
-  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq='  + queryText);
+  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
   query.send(update250kLabelsText);
 }
 
@@ -564,9 +564,9 @@ function update250kLabelsText(response) {
 }
 
 function update50kLabels() {
-  var queryStr = "SELECT 'geometry', 'NTS_50K' FROM 1Izlxp4e1TBVSKCI-volXITIKVv0W2KZEV-OfWM3j WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";  ;   
+  var queryStr = "SELECT 'geometry', 'NTS_50K' FROM 1Izlxp4e1TBVSKCI-volXITIKVv0W2KZEV-OfWM3j WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";   
   var queryText = encodeURIComponent(queryStr);
-  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq='  + queryText);
+  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
   query.send(update50kLabelsText);
 }
 
@@ -604,9 +604,9 @@ function update50kLabelsText(response) {
 }
 
 function updateNTSBlockLabels() {
-  var queryStr = "SELECT 'geometry', 'BC_BLOCK' FROM " + ntsBlockLabelTableID + " WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";  ;   
+  var queryStr = "SELECT 'geometry', 'BC_BLOCK' FROM " + ntsBlockLabelTableID + " WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";   
   var queryText = encodeURIComponent(queryStr);
-  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq='  + queryText);
+  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
   query.send(updateNTSBlockLabelsText);
 }
 
@@ -644,9 +644,9 @@ function updateNTSBlockLabelsText(response) {
 }
 
 function updateNTSUnitLabels() {
-  var queryStr = "SELECT 'geometry', 'BC_UNIT' FROM " + closestNTSUnitTableID + " WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";  ;   
+  var queryStr = "SELECT 'geometry', 'BC_UNIT' FROM " + closestNTSUnitTableID + " WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+map.getBounds().getSouthWest()+",LATLNG"+map.getBounds().getNorthEast()+"))";   
   var queryText = encodeURIComponent(queryStr);
-  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq='  + queryText);
+  var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
   query.send(updateNTSUnitLabelsText);
 }
 

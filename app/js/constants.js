@@ -53,7 +53,7 @@ var mapOptions = {
 var chartOptions = {
   colors: ['#f4511e'], 
   title: '',
-  titleTextStyle: {fontName: 'Arial', fontSize: 14,  bold: true},       
+  titleTextStyle: {fontName: 'Arial', fontSize: 14, bold: true},       
   legend: 'none', 
   width: 320,
   height: 250,
@@ -70,7 +70,7 @@ var tableOptions = {
 var stubChartOptions = {
   colors: ['#f4511e'], 
   title: '',
-  titleTextStyle: {fontName: 'Arial', fontSize: 14,  bold: true},       
+  titleTextStyle: {fontName: 'Arial', fontSize: 14, bold: true},       
   legend: 'none', 
   width: 320,
   height: 250,
@@ -80,7 +80,7 @@ var stubChartOptions = {
 };
 
 var pieChartOptions = { 
-  titleTextStyle: {fontName: 'Arial', fontSize: 14,  bold: true},
+  titleTextStyle: {fontName: 'Arial', fontSize: 14, bold: true},
   title: '',
   width: 320, 
   height: 200,  

@@ -7,8 +7,8 @@ var dashboardApp = angular.module('dashboardApp', [])
 
   var topOperators = new google.visualization.ColumnChart(document.getElementById('licenseeChart')),
       topOperatorsTable = new google.visualization.Table(document.getElementById('licenseeTable')),
-      topZones = new  google.visualization.ColumnChart(document.getElementById('zoneChart')),
-      topZonesTable = new  google.visualization.Table(document.getElementById('zoneTable')),
+      topZones = new google.visualization.ColumnChart(document.getElementById('zoneChart')),
+      topZonesTable = new google.visualization.Table(document.getElementById('zoneTable')),
       topFluids = new google.visualization.PieChart(document.getElementById('fluidChart'));
 
   selectHandlerOperators = function() {
@@ -127,7 +127,7 @@ var dashboardApp = angular.module('dashboardApp', [])
     var queryOperators = "SELECT 'Licensee', count(Licensee) AS " + $scope.chartDataType + " FROM " + 
       $scope.tableID + " WHERE 'Licensee' CONTAINS IGNORING CASE '" + localStorage.licensee + 
       "' AND 'TerminatingZone' CONTAINS IGNORING CASE '" + localStorage.zone + "' AND 'Substance' CONTAINS IGNORING CASE '" + 
-      localStorage.fluid + "' AND '" + $scope.dataDate + "' >= '" +  localStorage.fromDate + "' AND '" + $scope.dataDate + "' <= '" 
+      localStorage.fluid + "' AND '" + $scope.dataDate + "' >= '" + localStorage.fromDate + "' AND '" + $scope.dataDate + "' <= '" 
       + localStorage.toDate + "' AND 'latitude' >= '" + localStorage.swLat + "' AND 'latitude' <= '" + localStorage.neLat 
       + "' AND 'longitude' <= '" + localStorage.neLng + "' AND 'longitude' >= '" + localStorage.swLng 
       + "' GROUP BY 'Licensee' ORDER BY count(Licensee) desc LIMIT 15 ";           
@@ -144,7 +144,7 @@ var dashboardApp = angular.module('dashboardApp', [])
           topOperators.draw(view, {
             colors: ['#f4511e'], 
             title: 'Most Active Licensees',
-            titleTextStyle: {fontName: 'Arial', fontSize: 16,  bold: true},       
+            titleTextStyle: {fontName: 'Arial', fontSize: 16, bold: true},       
             legend: 'none', 
             width: 329,
             height: 200,
@@ -180,7 +180,7 @@ var dashboardApp = angular.module('dashboardApp', [])
           topZones.draw(view, {
             colors: ['#f4511e'], 
             title: 'Most Active Formations',
-            titleTextStyle: {fontName: 'Arial', fontSize: 16,  bold: true},       
+            titleTextStyle: {fontName: 'Arial', fontSize: 16, bold: true},       
             legend: 'none', 
             width: 329,
             height: 200,
@@ -227,7 +227,7 @@ var dashboardApp = angular.module('dashboardApp', [])
         var view = new google.visualization.DataView(topFluidsData);
 
         topFluids.draw(view, { 
-          titleTextStyle: {fontName: 'Arial', fontSize: 16,  bold: true},
+          titleTextStyle: {fontName: 'Arial', fontSize: 16, bold: true},
           title: $scope.chartDataType + ' by Licensed Substance',
           width: 443, 
           height: 300,  
@@ -247,7 +247,7 @@ var dashboardApp = angular.module('dashboardApp', [])
     $scope.tableID + " WHERE 'Licensee' CONTAINS IGNORING CASE '" + localStorage.licensee + 
     "' AND 'TerminatingZone' CONTAINS IGNORING CASE '" + localStorage.zone + 
     "' AND 'Substance' CONTAINS IGNORING CASE '" + localStorage.fluid + "' AND '" + $scope.dataDate + 
-    "' >= '" +  localStorage.fromDate + "' AND '" + $scope.dataDate + "' <= '" + localStorage.toDate + "' AND 'latitude' >= '" + localStorage.swLat + "' AND 'latitude' <= '" + 
+    "' >= '" + localStorage.fromDate + "' AND '" + $scope.dataDate + "' <= '" + localStorage.toDate + "' AND 'latitude' >= '" + localStorage.swLat + "' AND 'latitude' <= '" + 
     localStorage.neLat + "' AND 'longitude' <= '" + localStorage.neLng + "' AND 'longitude' >= '" + localStorage.swLng + 
     "' GROUP BY '" + $scope.dataDate + "' ORDER BY '" + $scope.dataDate + "'";
 

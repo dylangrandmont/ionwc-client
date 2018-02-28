@@ -92,7 +92,7 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
       infowindow.setZIndex(100);
     }
 
-    var content = "<h4 style='font-size:15px; margin-bottom: 10px;'>" + e.row['status'].value  + ": " + e.row['contractType'].value + ' ' + e.row['contractNo'].value + "</h4>"
+    var content = "<h4 style='font-size:15px; margin-bottom: 10px;'>" + e.row['status'].value + ": " + e.row['contractType'].value + ' ' + e.row['contractNo'].value + "</h4>"
     + "<b>Sale Date: </b>" + e.row['saleDate'].value + "<br>";
     if (e.row['status'].value === 'Accepted') {
       content += "<b>Sale Bonus: </b>" + e.row['bonus'].value + "<br>"
