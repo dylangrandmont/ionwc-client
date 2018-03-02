@@ -1,0 +1,28 @@
+svg > g > g:last-child { pointer-events: none }
+@media screen and ( max-width: 400px ) {
+  #titleForPage:after {
+    content: "Dashboard";
+  }
+}
+@media screen and ( min-width: 401px ) {
+  #titleForPage:after {
+    content: "Interactive Dashboard";
+  }
+}
+
+.google-visualization-table-table {
+  font-family: arial, helvetica;
+  font-size: 10pt;
+  cursor: default;
+  margin: 0;
+  background: white;
+  border-spacing: 0;
+}
+
+.btn {
+  background-color: #f4511e;
+  margin-top: 10px;
+  color: white;
+  letter-spacing: 0px;
+  width: 50%;
+}
