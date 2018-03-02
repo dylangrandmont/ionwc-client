@@ -32,22 +32,16 @@ var key = function(d) {
 
 var color = d3.scale.category20();
 
-var viewingCosts = true;
-
 var costsData = [{label: "Hosting (CAD$152)", value: 152.0}, {label: "Domain (CAD$20)", value: 20.0}];
 var contributionsData = [{label: "Contributions (CAD$5)", value: 5.0}, {label: "Remainder (CAD$167)", value: 167.0}];
 
-function switchData (){
-  if (viewingCosts) {
-    viewingCosts = !viewingCosts;
+function switchData (showCosts){
+  if (showCosts) {
     return costsData;
   } else {
-    viewingCosts = !viewingCosts;
     return contributionsData;
   }
 }
-
-change(switchData());
 
 function mergeWithFirstEqualZero(first, second){
   var secondSet = d3.set(); second.forEach(function(d) {

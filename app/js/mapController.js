@@ -274,11 +274,15 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
 
   $scope.toggleSupportModal = function() {
     $scope.showSupportModal = !$scope.showSupportModal;
+
+    if ($scope.showSupportModal) {
+      change(switchData($scope.showCosts));
+    }
   };
 
   $scope.toggleShowCosts = function() {
     $scope.showCosts = !$scope.showCosts;
-    change(switchData());
+    change(switchData($scope.showCosts));
 
     if ($scope.showCosts) {
       $scope.supportButton = "View 2018 Contributions";
