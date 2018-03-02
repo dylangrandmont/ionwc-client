@@ -1,16 +1,13 @@
-var svg = d3.select("#test")
-  .append("svg").attr("id", "chart-test")
+var svg = d3.select("#support-chart")
+  .append("svg").attr("id", "support-svg").attr("width", "100%")
   .append("g");
 
-svg.append("g")
-  .attr("class", "slices");
-svg.append("g")
-  .attr("class", "labels");
-svg.append("g")
-  .attr("class", "lines");
+svg.append("g").attr("class", "slices");
+svg.append("g").attr("class", "labels");
+svg.append("g").attr("class", "lines");
 
-var width = 200,
-    height = 200,
+var width = 100,
+    height = 100,
     radius = Math.min(width, height) / 2;
 
 var pie = d3.layout.pie()
@@ -27,7 +24,7 @@ var outerArc = d3.svg.arc()
   .innerRadius(radius * 0.9)
   .outerRadius(radius * 0.9);
 
-svg.attr("transform", "translate(" + width + "," + height + ")");
+svg.attr("transform", "translate(" + 225 + "," + 80 + ")");
 
 var key = function(d) {
   return d.data.label;
@@ -38,7 +35,7 @@ var color = d3.scale.category20();
 var viewingCosts = true;
 
 var costsData = [{label: "Hosting (CAD$152)", value: 152.0}, {label: "Domain (CAD$20)", value: 20.0}];
-var contributionsData = [{label: "Contributions (CAD$5)", value: 5.0}, {label: "Remainder (CAD$172)", value: 172.0}];
+var contributionsData = [{label: "Contributions (CAD$5)", value: 5.0}, {label: "Remainder (CAD$167)", value: 167.0}];
 
 function switchData (){
   if (viewingCosts) {
@@ -51,11 +48,6 @@ function switchData (){
 }
 
 change(switchData());
-
-d3.select(".randomize")
-  .on("click", function(){
-    change(switchData());
-  });
 
 function mergeWithFirstEqualZero(first, second){
   var secondSet = d3.set(); second.forEach(function(d) {

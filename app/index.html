@@ -154,16 +154,16 @@
       </div>
 
       <div id="supportModal" ng-show="showSupportModal" style="z-index: 10; padding-top: 55px;">
-        <div class="modal-content" style="width:96%; max-width: 750px">
+        <div class="modal-content" style="width:96%; max-width: 500px">
           <span class="close" ng-click="toggleSupportModal()">×</span>
           <center>
-            <h2>Help Keep Eye on Western Canada Live</h2>
+            <h2>Keep Eye on Western Canada Live</h2>
             <p>Eye on Western Canada provides data visualizations with open access at no charge. A small donation of CAD$ 5.00, 10.00, or 20.00 helps cover the cost of maintaining this domain with up-to-date information.</p>
             <br>
             <h3>Annual Costs vs. Contributions</h3>
 
-            <button class="randomize">{{supportButton}}</button> 
-            <div id="test" style="height: 350px;"></div>
+            <button ng-click="toggleShowCosts()">{{supportButton}}</button> 
+            <div id="support-chart" style="height: 250px;"></div>
 
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">

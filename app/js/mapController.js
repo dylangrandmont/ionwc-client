@@ -8,8 +8,9 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
   $rootScope.showUpcoming = true;
 
   $scope.showLegend = false;
-  $rootScope.showSupportModal = false;
+  $scope.showSupportModal = false;
   $scope.supportButton = "View 2018 Contributions";
+  $scope.showCosts = true;
 
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
@@ -272,7 +273,18 @@ app.controller('mapController', ['$scope', '$rootScope', '$sce', '$location', fu
   };
 
   $scope.toggleSupportModal = function() {
-    $rootScope.showSupportModal = !$rootScope.showSupportModal;
+    $scope.showSupportModal = !$scope.showSupportModal;
+  };
+
+  $scope.toggleShowCosts = function() {
+    $scope.showCosts = !$scope.showCosts;
+    change(switchData());
+
+    if ($scope.showCosts) {
+      $scope.supportButton = "View 2018 Contributions";
+    } else {
+      $scope.supportButton = "View 2018 Expenses";
+    }
   };
 
 }]);
