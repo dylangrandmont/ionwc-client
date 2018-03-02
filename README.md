@@ -26,13 +26,15 @@ Depedencies:
 On the command line, run the following
 ```
 npm install browser-sync --save-dev
-npm install --save-dev gulp-zip
-npm install --save-dev gulp-chmod
-npm install --save-dev gulp-jasmine
+npm install gulp-zip --save-dev
+npm install gulp-chmod --save-dev
+npm install gulp-jasmine --save-dev
 npm install karma --save-dev
 npm install karma-phantomjs-launcher --save-dev
 npm install karma-jasmine --save-dev
 npm install gulp-eslint
+npm install istanbul --save-dev
+npm install karma karma-coverage --save-dev
 ```
 
 To run the web client, execute
