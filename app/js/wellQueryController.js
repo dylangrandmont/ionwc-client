@@ -245,6 +245,18 @@ app.controller('wellQueryController', ['$scope', '$rootScope', function($scope, 
     $scope.toDate = getPrevNextDate($scope.toDate, diff);
   };
 
+  hotKeyService.registerCallBackForHotKey(KEY_DOWN_CONSTANTS.ARROW_LEFT, function() {
+    $scope.goPrev();
+    $scope.onWellQueryChange(true);
+    $scope.$apply();
+  });
+
+  hotKeyService.registerCallBackForHotKey(KEY_DOWN_CONSTANTS.ARROW_RIGHT, function() {
+    $scope.goNext();
+    $scope.onWellQueryChange(true);
+    $scope.$apply();
+  });
+
   $scope.onWellQueryChange = function(updateLocalStorage) {
     LayerManager.drillingLayer.setOptions({
       query: {

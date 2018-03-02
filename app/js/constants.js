@@ -1,5 +1,12 @@
 "use strict";
 
+const KEY_DOWN_CONSTANTS = (function() {
+  return {
+    ARROW_LEFT: "ArrowLeft",
+    ARROW_RIGHT: "ArrowRight"
+  };
+})();
+
 const WELL_LEGEND = "<svg height='10' width='10'>"+
   "<circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='rgb(0,255,0)' />"+
   "</svg> Oil Wells<br><svg height='10' width='10'>"+
