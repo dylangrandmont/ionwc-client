@@ -6,7 +6,6 @@ var hotKeyService = (function() {
       checkKey;
 
   document.onkeydown = function(event) {
-    event = event || window.event;
     for (const [key, callBack] of Object.entries(keyCallbacks)) {
       if (String(event.key) === key) {
         callBack();
