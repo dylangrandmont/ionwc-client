@@ -13,6 +13,6 @@ describe("dateService", function() {
     
     var defaultWellStartDate = dateService.getDefaultWellStartDate();
     expect(dateService.getReformatedDate(defaultWellStartDate)).toEqual(dateService.getReformatedDate(threeWeeksAgo));
-  })
+  });
 
 });
