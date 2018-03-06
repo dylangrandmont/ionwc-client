@@ -11,30 +11,6 @@ var landGridService = (function(google) {
       ntsBlockLabels = [],
       ntsUnitLabels = [];
 
-  var w5w6SectionLayer,
-      w4w5SectionLayer,
-      w3w4SectionLayer,
-      w2w3SectionLayer,
-      w1w2SectionLayer,
-      e1w1SectionLayer,
-      townshipLayer,
-      nts50kLayer,
-      nts250kLayer,
-      ntsBlockLayer,
-      w112NTSLayer,
-      w122NTSLayer;
-
-  var w5w6TableID = '1SsV04Zh5sacl-VyRrbFnGOKD1YvYFgI15j94yDzw',
-      w4w5TableID = '184zFumB3NJ4Bc87EYdOLRt0UL7IyOPmmaq02M5gs',
-      w3w4TableID = '1KUyHDvtzQPZ1ImQQNYxZRaiCnq9XjOpzWfZfetig',
-      w2w3TableID = '1td3bi62ZGm3WuAl3q5F9RFPUHYVOiZ8rZ_Oa2_K2',
-      w1w2TableID = '1x3gyCk37KvkwXQAooEikllenn_MAfzNw04j0kWbo',
-      e1w1TableID = '1HbFQHpGXvjjjb_FXGkXisowpRfFF5lePJkLj36gU',
-      townshipTableID = '1oAMu9KLywpYq0huxKsXXZv4LzJp5eWzC8bs-ZxHw',
-      ntsBlockTableID = '1X6Jwg177ivCsbvm5PlF-IEglQQlSG9iaR3KQO6wb',
-      w112NTSTableID = '10wMZQLhGZSx5GlFjLk2ug3TZVvD4TdGaY1M3g1mq',
-      w122NTSTableID = '1-uSMpARw1ZGDbcrBxxpB1vvw6d70wiq6_Uz0trq9';
-
   var w5w6LabelTableID = '18qUVQeJlqOZLiO6N8E44o4r_VXfqyk4HkehljNuY',
       w4w5LabelTableID = '1izV4_zLaS90KI2srS5VZPIZhw-MLWZ5ADve_4cOA',
       w3w4LabelTableID = '1Lf45NBxf8Tkyu2CnNWk06U4miV4NZ8RlKaO5W3sB',
@@ -53,143 +29,25 @@ var landGridService = (function(google) {
 
   function initializeLandGrid() {
     landGridInitialized = true;
-
-    w5w6SectionLayer = new google.maps.FusionTablesLayer({
-      query: {
-        select: '\'Geocodable address\'',
-        from: w5w6TableID
-      },
-      suppressInfoWindows: true,
-      options: {
-        styleId: 2,
-        templateId: 2
-      }
-    });
-
-    w4w5SectionLayer = new google.maps.FusionTablesLayer({
-      query: {
-        select: '\'Geocodable address\'',
-        from: w4w5TableID
-      },
-      suppressInfoWindows: true,
-      options: {
-        styleId: 2,
-        templateId: 2
-      }
-    }); 
-
-    w3w4SectionLayer = new google.maps.FusionTablesLayer({
-      query: {
-        select: '\'Geocodable address\'',
-        from: w3w4TableID
-      },
-      suppressInfoWindows: true,
-      options: {
-        styleId: 2,
-        templateId: 2
-      }
-    }); 
-
-    w2w3SectionLayer = new google.maps.FusionTablesLayer({
-      query: {
-        select: '\'Geocodable address\'',
-        from: w2w3TableID
-      },
-      suppressInfoWindows: true,
-      options: {
-        styleId: 2,
-        templateId: 2
-      }
-    });  
-
-    w1w2SectionLayer = new google.maps.FusionTablesLayer({
-      query: {
-        select: '\'Geocodable address\'',
-        from: w1w2TableID
-      },
-      suppressInfoWindows: true,
-      options: {
-        styleId: 2,
-        templateId: 2
-      }
-    }); 
-
-    e1w1SectionLayer = new google.maps.FusionTablesLayer({
-      query: {
-        select: '\'Geocodable address\'',
-        from: e1w1TableID
-      },
-      suppressInfoWindows: true,
-      options: {
-        styleId: 2,
-        templateId: 2
-      }
-    }); 
-
-    townshipLayer = new google.maps.FusionTablesLayer({
-      query: {
-        select: '\'Geocodable address\'',
-        from: townshipTableID
-      },
-      suppressInfoWindows: true,
-      options: {
-        styleId: 2,
-        templateId: 2
-      }
-    }); 
-
-    nts50kLayer = new google.maps.KmlLayer('http://ionwc.com/data/kml/NTS_50k_polygon.kml', {
-      suppressInfoWindows: true,
-      preserveViewport: true
-    });
-
-    nts250kLayer = new google.maps.KmlLayer('http://ionwc.com/data/kml/NTS_250k_polygon.kml', {
-      suppressInfoWindows: true,
-      preserveViewport: true
-    });
-
-    ntsBlockLayer = new google.maps.FusionTablesLayer({
-      query: {
-        select: '\'Geocodable address\'',
-        from: ntsBlockTableID
-      },
-      suppressInfoWindows: true,
-      options: {
-        styleId: 2,
-        templateId: 2
-      }
-    }); 
-
-    w112NTSLayer = new google.maps.FusionTablesLayer({
-      query: {
-        select: '\'Geocodable address\'',
-        from: w112NTSTableID
-      },
-      suppressInfoWindows: true,
-      options: {
-        styleId: 2,
-        templateId: 2
-      }
-    }); 
-
-    w122NTSLayer = new google.maps.FusionTablesLayer({
-      query: {
-        select: '\'Geocodable address\'',
-        from: w122NTSTableID
-      },
-      suppressInfoWindows: true,
-      options: {
-        styleId: 2,
-        templateId: 2
-      }
-    }); 
+    LayerManager.w5w6SectionLayer.setMap(null);
+    LayerManager.w4w5SectionLayer.setMap(null);
+    LayerManager.w3w4SectionLayer.setMap(null);
+    LayerManager.w2w3SectionLayer.setMap(null);
+    LayerManager.w1w2SectionLayer.setMap(null);
+    LayerManager.e1w1SectionLayer.setMap(null);
+    LayerManager.townshipLayer.setMap(null);
+    LayerManager.nts50kLayer.setMap(null);
+    LayerManager.nts250kLayer.setMap(null);
+    LayerManager.ntsBlockLayer.setMap(null);
+    LayerManager.w112NTSLayer.setMap(null);
+    LayerManager.w122NTSLayer.setMap(null);
 
     google.maps.event.addListener(landGridMap, "bounds_changed", onBoundsChanged);
     google.maps.event.addListener(landGridMap, "zoom_changed", onZoomChanged);
   }
 
   function onBoundsChanged() {
-    var zoom = landGridMap.getZoom();
+    const zoom = landGridMap.getZoom();
 
     if (landGridOn) {
       if (zoom >= 6) {
@@ -226,26 +84,26 @@ var landGridService = (function(google) {
     var zoom = landGridMap.getZoom();
 
     if (landGridOn && zoom >= 5) {
-      townshipLayer.setMap(null);
+      LayerManager.townshipLayer.setMap(null);
       clearLabels(nts250kLabels);
       if (zoom >= 6) {
-        nts50kLayer.setMap(null);
-        townshipLayer.setMap(landGridMap);
-        nts250kLayer.setMap(landGridMap);
+        LayerManager.nts50kLayer.setMap(null);
+        LayerManager.townshipLayer.setMap(landGridMap);
+        LayerManager.nts250kLayer.setMap(landGridMap);
         redrawLayers();
         if (zoom >= 7) {
-          ntsBlockLayer.setMap(null);
-          nts50kLayer.setMap(landGridMap);
+          LayerManager.ntsBlockLayer.setMap(null);
+          LayerManager.nts50kLayer.setMap(landGridMap);
           redrawLayers();
           clearLabels(nts50kLabels);
           if (zoom >= 8) {
-            ntsBlockLayer.setMap(landGridMap);
+            LayerManager.ntsBlockLayer.setMap(landGridMap);
             redrawLayers();
             clearLabels(nts50kLabels);
             clearLabels(townshipLabels);
             if (zoom >= 10) {
-              w112NTSLayer.setMap(null);
-              w122NTSLayer.setMap(null);
+              LayerManager.w112NTSLayer.setMap(null);
+              LayerManager.w122NTSLayer.setMap(null);
               if (zoom >= 11) {
                 clearSectionLayers();
                 if (zoom < 12) {
@@ -258,12 +116,12 @@ var landGridService = (function(google) {
         }
       }
     } else {
-      townshipLayer.setMap(null);
-      nts250kLayer.setMap(null);
-      nts50kLayer.setMap(null);
-      ntsBlockLayer.setMap(null);
-      w112NTSLayer.setMap(null);
-      w122NTSLayer.setMap(null);
+      LayerManager.townshipLayer.setMap(null);
+      LayerManager.nts250kLayer.setMap(null);
+      LayerManager.nts50kLayer.setMap(null);
+      LayerManager.ntsBlockLayer.setMap(null);
+      LayerManager.w112NTSLayer.setMap(null);
+      LayerManager.w122NTSLayer.setMap(null);
       clearSectionLayers();
       clearLabels(sectionLabels);
       clearLabels(townshipLabels);
@@ -282,12 +140,12 @@ var landGridService = (function(google) {
   }
 
   function clearSectionLayers() {
-    w5w6SectionLayer.setMap(null);
-    w4w5SectionLayer.setMap(null);
-    w3w4SectionLayer.setMap(null);
-    w2w3SectionLayer.setMap(null);
-    w1w2SectionLayer.setMap(null);
-    e1w1SectionLayer.setMap(null);
+    LayerManager.w5w6SectionLayer.setMap(null);
+    LayerManager.w4w5SectionLayer.setMap(null);
+    LayerManager.w3w4SectionLayer.setMap(null);
+    LayerManager.w2w3SectionLayer.setMap(null);
+    LayerManager.w1w2SectionLayer.setMap(null);
+    LayerManager.e1w1SectionLayer.setMap(null);
   }
 
   function clearLabels(labels) {
@@ -393,27 +251,27 @@ var landGridService = (function(google) {
       switch(tableID) {
         case w5w6TableID:
           clearSectionLayers();
-          w5w6SectionLayer.setMap(map);
+          LayerManager.w5w6SectionLayer.setMap(map);
           break;
         case w4w5TableID:
           clearSectionLayers();
-          w4w5SectionLayer.setMap(map);
+          LayerManager.w4w5SectionLayer.setMap(map);
           break;
         case w3w4TableID:
           clearSectionLayers();
-          w3w4SectionLayer.setMap(map);
+          LayerManager.w3w4SectionLayer.setMap(map);
           break;
         case w2w3TableID:
           clearSectionLayers();
-          w2w3SectionLayer.setMap(map);
+          LayerManager.w2w3SectionLayer.setMap(map);
           break;
         case w1w2TableID:
           clearSectionLayers();
-          w1w2SectionLayer.setMap(map);
+          LayerManager.w1w2SectionLayer.setMap(map);
           break;
         case e1w1TableID:
           clearSectionLayers();
-          e1w1SectionLayer.setMap(map);
+          LayerManager.e1w1SectionLayer.setMap(map);
           break;
       }
 
@@ -424,17 +282,17 @@ var landGridService = (function(google) {
   function enableNTSUnitsInView() {
     if (landGridMap.getCenter().lng() > -122.0 &&
       landGridMap.getCenter().lng() < -120.0) {
-      w112NTSLayer.setMap(landGridMap);
-      w122NTSLayer.setMap(null);
+      LayerManager.w112NTSLayer.setMap(landGridMap);
+      LayerManager.w122NTSLayer.setMap(null);
       closestNTSUnitTableID = w112NTSLabelTableID;
     } else if (landGridMap.getCenter().lng() > -124.0 &&
       landGridMap.getCenter().lng() < -122.0) {
-      w112NTSLayer.setMap(null);
-      w122NTSLayer.setMap(landGridMap);
+      LayerManager.w112NTSLayer.setMap(null);
+      LayerManager.w122NTSLayer.setMap(landGridMap);
       closestNTSUnitTableID = w122NTSLabelTableID;
     } else {
-      w112NTSLayer.setMap(null);
-      w122NTSLayer.setMap(null);
+      LayerManager.w112NTSLayer.setMap(null);
+      LayerManager.w122NTSLayer.setMap(null);
     }
   }
 

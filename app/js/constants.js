@@ -7,6 +7,25 @@ const KEY_DOWN_CONSTANTS = (function() {
   };
 })();
 
+const TABLE_IDS = (function() {
+  return {
+    drilling: '1lc9vWq_M45gnsL5VLLNsLKBPlPQ2LgCOWxt_kUHI',
+    licensing: '1c5dt503OlbDr5-nRRP-xsotq3cTuJeBx3p5K_Ri7',
+    upComingLandSale: '1kEPGipJ6rVtYNDcj96g7sGwzCvdxlY2WyU1cHY-L',
+    previousLandSale: '1jCuFLgiI-K7ftnl7OGewbeQ2yLkNuRKOWgYckHp3',
+    w5w6TableID: '1SsV04Zh5sacl-VyRrbFnGOKD1YvYFgI15j94yDzw',
+    w4w5TableID: '184zFumB3NJ4Bc87EYdOLRt0UL7IyOPmmaq02M5gs',
+    w3w4TableID: '1KUyHDvtzQPZ1ImQQNYxZRaiCnq9XjOpzWfZfetig',
+    w2w3TableID: '1td3bi62ZGm3WuAl3q5F9RFPUHYVOiZ8rZ_Oa2_K2',
+    w1w2TableID: '1x3gyCk37KvkwXQAooEikllenn_MAfzNw04j0kWbo',
+    e1w1TableID: '1HbFQHpGXvjjjb_FXGkXisowpRfFF5lePJkLj36gU',
+    townshipTableID: '1oAMu9KLywpYq0huxKsXXZv4LzJp5eWzC8bs-ZxHw',
+    ntsBlockTableID: '1X6Jwg177ivCsbvm5PlF-IEglQQlSG9iaR3KQO6wb',
+    w112NTSTableID: '10wMZQLhGZSx5GlFjLk2ug3TZVvD4TdGaY1M3g1mq',
+    w122NTSTableID: '1-uSMpARw1ZGDbcrBxxpB1vvw6d70wiq6_Uz0trq9'
+  }
+})();
+
 const WELL_LEGEND = "<svg height='10' width='10'>"+
   "<circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='rgb(0,255,0)' />"+
   "</svg> Oil Wells<br><svg height='10' width='10'>"+
@@ -105,13 +124,6 @@ var markerColors = [
   {where: "'SubstanceCode' = 0", markerOptions:{iconName: "small_green"}},
   {where: "'SubstanceCode' = 3", markerOptions:{iconName: "small_blue"}}
 ];
-
-var tableIDs = {
-  drilling: '1lc9vWq_M45gnsL5VLLNsLKBPlPQ2LgCOWxt_kUHI',
-  licensing: '1c5dt503OlbDr5-nRRP-xsotq3cTuJeBx3p5K_Ri7',
-  upComingLandSale: '1kEPGipJ6rVtYNDcj96g7sGwzCvdxlY2WyU1cHY-L',
-  previousLandSale: '1jCuFLgiI-K7ftnl7OGewbeQ2yLkNuRKOWgYckHp3'
-};
 
 var zones = [
   {

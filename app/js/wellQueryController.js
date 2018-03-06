@@ -91,7 +91,7 @@ app.controller('wellQueryController', ['$scope', '$rootScope', function($scope, 
   };
 
   var updateVizualizations = function() {
-    var tableID = ($rootScope.viewType === 'Drilling') ? tableIDs.drilling : tableIDs.licensing;
+    var tableID = ($rootScope.viewType === 'Drilling') ? TABLE_IDS.drilling : TABLE_IDS.licensing;
     var dateString = ($rootScope.viewType === 'Drilling') ? 'DrillDate' : 'Date';
     var statsTableTotalLabel = ($rootScope.viewType === 'Drilling') ? 'Total Displayed Spuds' : 'Total Displayed Licences';
     var chartDataType = ($rootScope.viewType === 'Drilling') ? 'Spuds' : 'Licences';
@@ -261,7 +261,7 @@ app.controller('wellQueryController', ['$scope', '$rootScope', function($scope, 
     LayerManager.drillingLayer.setOptions({
       query: {
         select: 'address',
-        from: tableIDs.drilling,
+        from: TABLE_IDS.drilling,
         where: "'Licensee' CONTAINS IGNORING CASE '" + $scope.licensee + "' AND 'Substance' CONTAINS IGNORING CASE '" + 
         $scope.fluid + "' AND 'TerminatingZone' CONTAINS IGNORING CASE '" + $scope.zone + "' AND  'DrillDate' >= '" + 
         dateService.getReformatedDate($scope.fromDate) + "' AND 'DrillDate' <= '" + dateService.getReformatedDate($scope.toDate) + "'" 
@@ -272,7 +272,7 @@ app.controller('wellQueryController', ['$scope', '$rootScope', function($scope, 
     LayerManager.licencingLayer.setOptions({
       query: {
         select: 'address',
-        from: tableIDs.licensing,
+        from: TABLE_IDS.licensing,
         where: "'Licensee' CONTAINS IGNORING CASE '" + $scope.licensee + "' AND 'Substance' CONTAINS IGNORING CASE '" + 
         $scope.fluid + "' AND 'TerminatingZone' CONTAINS IGNORING CASE '" + $scope.zone + "' AND  'Date' >= '" + 
         dateService.getReformatedDate($scope.fromDate) + "' AND 'Date' <= '" + dateService.getReformatedDate($scope.toDate) + "'" 

@@ -329,14 +329,14 @@ app.controller('landsaleQueryController', ['$scope', '$rootScope', '$location', 
     LayerManager.upComingLandSaleLayer.setOptions({
       query: {
         select: 'address',
-        from: tableIDs.upComingLandSale,
+        from: TABLE_IDS.upComingLandSale,
         where: queryStrings.upComingQuery
       }
     });
     LayerManager.previousLandSaleLayer.setOptions({
       query: {
         select: 'address',
-        from: tableIDs.previousLandSale,
+        from: TABLE_IDS.previousLandSale,
         where: queryStrings.previousQuery
       }
     });
