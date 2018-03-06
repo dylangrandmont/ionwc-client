@@ -50,29 +50,27 @@ var landGridService = (function(google) {
     const zoom = landGridMap.getZoom();
 
     if (landGridOn) {
-      if (zoom >= 6) {
-        clearLabels(nts250kLabels);
-        clearLabels(nts50kLabels);
-        update250kLabels();
+      clearLabels(nts250kLabels);
+      clearLabels(nts50kLabels);
+      update250kLabels();
 
-        if (zoom >= 8) {
-          clearLabels(ntsBlockLabels);
-          update50kLabels();
+      if (zoom >= 8) {
+        clearLabels(ntsBlockLabels);
+        update50kLabels();
 
-          if (zoom >= 9) {
-            clearLabels(townshipLabels);
-            clearLabels(sectionLabels);
-            updateTownships();
-            updateNTSBlockLabels();
+        if (zoom >= 9) {
+          clearLabels(townshipLabels);
+          clearLabels(sectionLabels);
+          updateTownships();
+          updateNTSBlockLabels();
 
-            if (zoom >= 11){
-              clearLabels(ntsUnitLabels);
-              enableNTSUnitsInView();
+          if (zoom >= 11){
+            clearLabels(ntsUnitLabels);
+            enableNTSUnitsInView();
 
-              if (zoom >= 12) {
-                updateSections();
-                updateNTSUnitLabels();
-              }
+            if (zoom >= 12) {
+              updateSections();
+              updateNTSUnitLabels();
             }
           }
         }
@@ -83,33 +81,32 @@ var landGridService = (function(google) {
   function onZoomChanged() {
     var zoom = landGridMap.getZoom();
 
-    if (landGridOn && zoom >= 5) {
+    if (landGridOn) {
       LayerManager.townshipLayer.setMap(null);
       clearLabels(nts250kLabels);
-      if (zoom >= 6) {
-        LayerManager.nts50kLayer.setMap(null);
-        LayerManager.townshipLayer.setMap(landGridMap);
-        LayerManager.nts250kLayer.setMap(landGridMap);
+      LayerManager.nts50kLayer.setMap(null);
+      LayerManager.townshipLayer.setMap(landGridMap);
+      LayerManager.nts250kLayer.setMap(landGridMap);
+      redrawLayers();
+
+      if (zoom >= 7) {
+        LayerManager.ntsBlockLayer.setMap(null);
+        LayerManager.nts50kLayer.setMap(landGridMap);
         redrawLayers();
-        if (zoom >= 7) {
-          LayerManager.ntsBlockLayer.setMap(null);
-          LayerManager.nts50kLayer.setMap(landGridMap);
+        clearLabels(nts50kLabels);
+        if (zoom >= 8) {
+          LayerManager.ntsBlockLayer.setMap(landGridMap);
           redrawLayers();
           clearLabels(nts50kLabels);
-          if (zoom >= 8) {
-            LayerManager.ntsBlockLayer.setMap(landGridMap);
-            redrawLayers();
-            clearLabels(nts50kLabels);
-            clearLabels(townshipLabels);
-            if (zoom >= 10) {
-              LayerManager.w112NTSLayer.setMap(null);
-              LayerManager.w122NTSLayer.setMap(null);
-              if (zoom >= 11) {
-                clearSectionLayers();
-                if (zoom < 12) {
-                  clearLabels(sectionLabels);
-                  clearLabels(ntsUnitLabels);
-                }
+          clearLabels(townshipLabels);
+          if (zoom >= 10) {
+            LayerManager.w112NTSLayer.setMap(null);
+            LayerManager.w122NTSLayer.setMap(null);
+            if (zoom >= 11) {
+              clearSectionLayers();
+              if (zoom < 12) {
+                clearLabels(sectionLabels);
+                clearLabels(ntsUnitLabels);
               }
             }
           }
@@ -181,33 +178,33 @@ var landGridService = (function(google) {
     }
     switch(closestMeridian) {
       case 1:
-        return e1w1TableID;
+        return TABLE_IDS.e1w1TableID;
       case 2:
-        return w1w2TableID;
+        return TABLE_IDS.w1w2TableID;
       case 3:
-        return w2w3TableID;
+        return TABLE_IDS.w2w3TableID;
       case 4:
-        return w3w4TableID;
+        return TABLE_IDS.w3w4TableID;
       case 5:
-        return w4w5TableID;
+        return TABLE_IDS.w4w5TableID;
       default:
-        return w5w6TableID;
+        return TABLE_IDS.w5w6TableID;
     }
   }
 
   function getLabelTableID(tableid) {
     switch(tableid) {
-      case w5w6TableID:
+      case TABLE_IDS.w5w6TableID:
         return w5w6LabelTableID;
-      case w4w5TableID:
+      case TABLE_IDS.w4w5TableID:
         return w4w5LabelTableID;
-      case w3w4TableID:
+      case TABLE_IDS.w3w4TableID:
         return w3w4LabelTableID;
-      case w2w3TableID:
+      case TABLE_IDS.w2w3TableID:
         return w2w3LabelTableID;
-      case w1w2TableID:
+      case TABLE_IDS.w1w2TableID:
         return w1w2LabelTableID;
-      case e1w1TableID:
+      case TABLE_IDS.e1w1TableID:
         return e1w1LabelTableID;
     }
   }
@@ -241,7 +238,7 @@ var landGridService = (function(google) {
           enableEventPropagation: true
         }));
 
-        sectionLabels[sectionLabels.length-1].open(map);
+        sectionLabels[sectionLabels.length-1].open(landGridMap);
       }
     }
   }
@@ -249,29 +246,29 @@ var landGridService = (function(google) {
   function enableClosestSectionMap(tableID) {
     if (landGridMap.getZoom() > 12) {
       switch(tableID) {
-        case w5w6TableID:
+        case TABLE_IDS.w5w6TableID:
           clearSectionLayers();
-          LayerManager.w5w6SectionLayer.setMap(map);
+          LayerManager.w5w6SectionLayer.setMap(landGridMap);
           break;
-        case w4w5TableID:
+        case TABLE_IDS.w4w5TableID:
           clearSectionLayers();
-          LayerManager.w4w5SectionLayer.setMap(map);
+          LayerManager.w4w5SectionLayer.setMap(landGridMap);
           break;
-        case w3w4TableID:
+        case TABLE_IDS.w3w4TableID:
           clearSectionLayers();
-          LayerManager.w3w4SectionLayer.setMap(map);
+          LayerManager.w3w4SectionLayer.setMap(landGridMap);
           break;
-        case w2w3TableID:
+        case TABLE_IDS.w2w3TableID:
           clearSectionLayers();
-          LayerManager.w2w3SectionLayer.setMap(map);
+          LayerManager.w2w3SectionLayer.setMap(landGridMap);
           break;
-        case w1w2TableID:
+        case TABLE_IDS.w1w2TableID:
           clearSectionLayers();
-          LayerManager.w1w2SectionLayer.setMap(map);
+          LayerManager.w1w2SectionLayer.setMap(landGridMap);
           break;
-        case e1w1TableID:
+        case TABLE_IDS.e1w1TableID:
           clearSectionLayers();
-          LayerManager.e1w1SectionLayer.setMap(map);
+          LayerManager.e1w1SectionLayer.setMap(landGridMap);
           break;
       }
 
@@ -297,10 +294,12 @@ var landGridService = (function(google) {
   }
 
   function updateTownships() {
-    var queryStr = "SELECT 'geometry', 'DLS_ID' FROM 1BDEHLkR0cR_UEOB0IvIfTu5pP5GDYI0CCQ1ioweU WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+landGridMap.getBounds().getSouthWest()+",LATLNG"+landGridMap.getBounds().getNorthEast()+"))";   
-    var queryText = encodeURIComponent(queryStr);
-    var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
-    query.send(updateTownshipsText);
+    if (landGridMap.getBounds()) {
+      var queryStr = "SELECT 'geometry', 'DLS_ID' FROM 1BDEHLkR0cR_UEOB0IvIfTu5pP5GDYI0CCQ1ioweU WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+landGridMap.getBounds().getSouthWest()+",LATLNG"+landGridMap.getBounds().getNorthEast()+"))";   
+      var queryText = encodeURIComponent(queryStr);
+      var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
+      query.send(updateTownshipsText);
+    }
   }
 
   function updateTownshipsText(response) {
@@ -345,7 +344,7 @@ var landGridService = (function(google) {
           enableEventPropagation: true
         }));
 
-        townshipLabels[townshipLabels.length-1].open(map);
+        townshipLabels[townshipLabels.length-1].open(landGridMap);
       }
     }
   }
@@ -390,7 +389,7 @@ var landGridService = (function(google) {
           isHidden: false,
           enableEventPropagation: true
         }));
-        nts250kLabels[nts250kLabels.length-1].open(map);
+        nts250kLabels[nts250kLabels.length-1].open(landGridMap);
       }
     }
   }
@@ -432,16 +431,18 @@ var landGridService = (function(google) {
           isHidden: false,
           enableEventPropagation: true
         }));
-        nts50kLabels[nts50kLabels.length-1].open(map);
+        nts50kLabels[nts50kLabels.length-1].open(landGridMap);
       }
     }
   }
 
   function updateNTSBlockLabels() {
-    var queryStr = "SELECT 'geometry', 'BC_BLOCK' FROM " + ntsBlockLabelTableID + " WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+landGridMap.getBounds().getSouthWest()+",LATLNG"+landGridMap.getBounds().getNorthEast()+"))";   
-    var queryText = encodeURIComponent(queryStr);
-    var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
-    query.send(updateNTSBlockLabelsText);
+    if (landGridMap.getBounds()) {
+      var queryStr = "SELECT 'geometry', 'BC_BLOCK' FROM " + ntsBlockLabelTableID + " WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+landGridMap.getBounds().getSouthWest()+",LATLNG"+landGridMap.getBounds().getNorthEast()+"))";   
+      var queryText = encodeURIComponent(queryStr);
+      var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
+      query.send(updateNTSBlockLabelsText);
+    }
   }
 
   function updateNTSBlockLabelsText(response) {
@@ -472,16 +473,18 @@ var landGridService = (function(google) {
           isHidden: false,
           enableEventPropagation: true
         }));
-        ntsBlockLabels[ntsBlockLabels.length-1].open(map);
+        ntsBlockLabels[ntsBlockLabels.length-1].open(landGridMap);
       }
     }
   }
 
   function updateNTSUnitLabels() {
-    var queryStr = "SELECT 'geometry', 'BC_UNIT' FROM " + closestNTSUnitTableID + " WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+landGridMap.getBounds().getSouthWest()+",LATLNG"+landGridMap.getBounds().getNorthEast()+"))";   
-    var queryText = encodeURIComponent(queryStr);
-    var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
-    query.send(updateNTSUnitLabelsText);
+    if (landGridMap.getBounds()) {
+      var queryStr = "SELECT 'geometry', 'BC_UNIT' FROM " + closestNTSUnitTableID + " WHERE ST_INTERSECTS(geometry, RECTANGLE(LATLNG"+landGridMap.getBounds().getSouthWest()+",LATLNG"+landGridMap.getBounds().getNorthEast()+"))";   
+      var queryText = encodeURIComponent(queryStr);
+      var query = new google.visualization.Query('http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
+      query.send(updateNTSUnitLabelsText);
+    }
   }
 
   function updateNTSUnitLabelsText(response) {
@@ -512,7 +515,7 @@ var landGridService = (function(google) {
           isHidden: false,
           enableEventPropagation: true
         }));
-        ntsUnitLabels[ntsUnitLabels.length-1].open(map);
+        ntsUnitLabels[ntsUnitLabels.length-1].open(landGridMap);
       }
     }
   }
