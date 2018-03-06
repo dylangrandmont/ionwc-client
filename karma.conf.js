@@ -14,12 +14,14 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'test/google-maps-api.js',
+      'app/deps/gstatic-charts-loader.js',
       'app/deps/angular-1.6.1/angular.min.js',
       'app/js/constants.js',
       'app/js/dateService.js',
       'app/js/hotKeyService.js',
       'app/js/layerManager.js',
       'app/js/landGridService.js',
+      'app/js/map.js',
       'test/*.js'
     ],
 
