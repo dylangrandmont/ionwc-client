@@ -13,15 +13,20 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test/google-maps-api.js',
+      'test/resources/google-maps-api.js',
       'app/deps/gstatic-charts-loader.js',
-      'app/deps/angular-1.6.1/angular.min.js',
+      'node_modules/angular/angular.js',
+      'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/angular-animate/angular-animate.js',
+      'node_modules/angular-sanitize/angular-sanitize.js',
+      'node_modules/angular-route/angular-route.js',
       'app/js/constants.js',
       'app/js/dateService.js',
       'app/js/hotKeyService.js',
       'app/js/layerManager.js',
       'app/js/landGridService.js',
       'app/js/map.js',
+      'app/js/annotationController.js',
       'test/*.js'
     ],
 

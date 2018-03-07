@@ -1,6 +1,6 @@
 var map;
 
-var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngRoute'])
+var app = angular.module('mapApp', ['ngAnimate', 'ngSanitize', 'ngRoute'])
 .config(['$locationProvider', function($locationProvider) {
     $locationProvider.html5Mode({
       enabled: true,

@@ -35,6 +35,12 @@ npm install karma-jasmine --save-dev
 npm install gulp-eslint
 npm install istanbul --save-dev
 npm install karma karma-coverage --save-dev
+npm install angular-mocks
+npm install angular
+npm install angular-ui-bootstrap
+npm install angular-animate
+npm install angular-sanitize
+npm install angular-route
 ```
 
 To run the web client, execute
