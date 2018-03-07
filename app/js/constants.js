@@ -23,7 +23,7 @@ const TABLE_IDS = (function() {
     ntsBlockTableID: '1X6Jwg177ivCsbvm5PlF-IEglQQlSG9iaR3KQO6wb',
     w112NTSTableID: '10wMZQLhGZSx5GlFjLk2ug3TZVvD4TdGaY1M3g1mq',
     w122NTSTableID: '1-uSMpARw1ZGDbcrBxxpB1vvw6d70wiq6_Uz0trq9'
-  }
+  };
 })();
 
 const WELL_LEGEND = "<svg height='10' width='10'>"+

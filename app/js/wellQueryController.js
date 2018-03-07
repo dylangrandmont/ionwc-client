@@ -204,7 +204,7 @@ app.controller('wellQueryController', ['$scope', '$rootScope', function($scope, 
 
       var slicesColor = {};
 
-      for (var i=0; i < data.getNumberOfRows(); i++) {
+      for (let i=0; i < data.getNumberOfRows(); i++) {
         if (data.getValue(i, 0) === 'Crude Bitumen') {
           slicesColor[i] = {
             color: 'rgb(194, 134, 73)'

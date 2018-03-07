@@ -126,7 +126,7 @@ app.controller('annotationController', ['$scope', function($scope) {
   });
 
   $scope.$watch("geoEdgesCheckboxes", function(n){
-    for (var i in n) {
+    for (let i in n) {
       if (n[i].val) {
         $scope.geologicalEdges[i].setMap(map);
       } else {
@@ -136,7 +136,7 @@ app.controller('annotationController', ['$scope', function($scope) {
   }, true);
 
   $scope.$watch("licensingTrendsCheckboxes", function(n){
-    for (var i in n) {
+    for (let i in n) {
       if (n[i].val) {
         $scope.licensingTrends[i].setMap(map);
       } else {

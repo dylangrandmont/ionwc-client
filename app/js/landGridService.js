@@ -170,7 +170,7 @@ var landGridService = (function(google) {
   function getNearestSectionTableID(lng) {
     var closestMeridian,
     minDistance = 100.0;
-    for (var i = 0; i < meridianLngs.length; i++) {
+    for (let i = 0; i < meridianLngs.length; i++) {
       if (Math.abs(lng - meridianLngs[i]) < minDistance) {
         minDistance = Math.abs(lng - meridianLngs[i]);
         closestMeridian = i+1;
@@ -215,7 +215,7 @@ var landGridService = (function(google) {
     if (responseTable !== null) {
       const numRows = responseTable.getNumberOfRows();
 
-      for (var i = 0; i < numRows; i++) {
+      for (let i = 0; i < numRows; i++) {
         const coordinates = getCoordinatesFromRow(response, i);
         var point = new google.maps.LatLng(
           parseFloat(coordinates.lat),
@@ -321,7 +321,7 @@ var landGridService = (function(google) {
         labelOffset = -25;
       }
 
-      for (var i = 0; i < numRows; i++) {
+      for (let i = 0; i < numRows; i++) {
         const coordinates = getCoordinatesFromRow(response, i);
         var point = new google.maps.LatLng(
           parseFloat(coordinates.lat),
@@ -366,7 +366,7 @@ var landGridService = (function(google) {
       const numRows = responseTable.getNumberOfRows();
 
 
-      for (var i = 0; i < numRows; i++) {
+      for (let i = 0; i < numRows; i++) {
         const coordinates = getCoordinatesFromRow(response, i);
         var point = new google.maps.LatLng(
           parseFloat(coordinates.lat),
@@ -409,7 +409,7 @@ var landGridService = (function(google) {
     if (responseTable !== null) {
       const numRows = responseTable.getNumberOfRows();
 
-      for (var i = 0; i < numRows; i++) {
+      for (let i = 0; i < numRows; i++) {
         const coordinates = getCoordinatesFromRow(response, i);
         var point = new google.maps.LatLng(
           parseFloat(coordinates.lat),
@@ -451,7 +451,7 @@ var landGridService = (function(google) {
     if (responseTable !== null) {
       const numRows = responseTable.getNumberOfRows();
 
-      for (var i = 0; i < numRows; i++) {
+      for (let i = 0; i < numRows; i++) {
         const coordinates = getCoordinatesFromRow(response, i);
         var point = new google.maps.LatLng(
           parseFloat(coordinates.lat),
@@ -493,7 +493,7 @@ var landGridService = (function(google) {
     if (responseTable !== null) {
       const numRows = responseTable.getNumberOfRows();
 
-      for (var i = 0; i < numRows; i++) {
+      for (let i = 0; i < numRows; i++) {
         const coordinates = getCoordinatesFromRow(response, i);
         var point = new google.maps.LatLng(
           parseFloat(coordinates.lat),

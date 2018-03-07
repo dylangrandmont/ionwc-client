@@ -190,5 +190,5 @@ var LayerManager = (function(dateService, TABLE_IDS) {
     ntsBlockLayer: ntsBlockLayer,
     w112NTSLayer: w112NTSLayer,
     w122NTSLayer: w122NTSLayer
-  }
+  };
 })(dateService, TABLE_IDS);

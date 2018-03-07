@@ -35,7 +35,73 @@ describe('annotationController', function() {
     });
   });
 
-  it('should update maps if checkboxes are updated', function() {
+  it('should update geologicalEdges\'s maps if checkboxes are updated', function() {
+    var $scope = $rootScope.$new();
+    var controller = $controller('annotationController', {
+      $scope: $scope
+    });
+    element = document.createElement('div');
+    element.id = "map";
+    document.body.appendChild(element);
 
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: 50.0,
+        lng: -102.0
+      }
+    });
+
+    $scope.geoEdgesCheckboxes[0].val = true;
+    $scope.$digest();
+
+    let isFirstEdge = true;
+
+    $scope.geologicalEdges.forEach(function(geologicalEdge) {
+      if (isFirstEdge) {
+        expect(geologicalEdge.getMap()).toEqual(map);  
+        isFirstEdge = false;
+      } else {
+        expect(geologicalEdge.getMap()).toEqual(null);
+      }
+    });
+
+    $scope.licensingTrends.forEach(function(licensingTrend) {
+      expect(licensingTrend.getMap()).toEqual(null);
+    });
+  });
+
+  it('should update licensingTrends\'s maps if checkboxes are updated', function() {
+    var $scope = $rootScope.$new();
+    var controller = $controller('annotationController', {
+      $scope: $scope
+    });
+    element = document.createElement('div');
+    element.id = "map";
+    document.body.appendChild(element);
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: 50.0,
+        lng: -102.0
+      }
+    });
+
+    $scope.licensingTrendsCheckboxes[0].val = true;
+    $scope.$digest();
+
+    let isFirstEdge = true;
+
+    $scope.licensingTrends.forEach(function(licensingTrend) {
+      if (isFirstEdge) {
+        expect(licensingTrend.getMap()).toEqual(map);  
+        isFirstEdge = false;
+      } else {
+        expect(licensingTrend.getMap()).toEqual(null);
+      }
+    });
+
+    $scope.geologicalEdges.forEach(function(geologicalEdge) {
+      expect(geologicalEdge.getMap()).toEqual(null);
+    });
   });
 });
